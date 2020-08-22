@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">SupCake</string>
+
+    <string name="txt_nuevaVenta">Nueva Venta</string>
+    <string name="txt_clientes">Clientes</string>
+    <string name="txt_catalogo">Catálogo</string>
+    <string name="txt_estadisticas">Estadísticas</string>
+
+    <string name="title_activity_login">Login</string>
+    <string name="txt_usuario">Usuario</string>
+    <string name="txt_password">Contraseña</string>
+    <string name="accion_ingresar">Entrar</string>
+    <string name="txt_bienvenido">"¡Bienvenido!"</string>
+    <string name="txt_usuario_invalido">Usuario inválido</string>
+    <string name="txt_password_invalido">Contraseña inválida</string>
+    <string name="txt_fallo_login">"Error en Login"</string>
+
+    <string name="sinTexto"> </string>
+    <string name="TextView">TextView</string>
+
+    <string name="txt_modoAdministrador">Modo\nAdministrador</string>
+    <string name="txt_volverAlMenu">Volver al Menu</string>
+    
+    <string name="txt_nombreProducto">Nombre Producto</string>
+    <string name="txt_precioProducto">Precio</string>
+    <string name="txt_addProducto">Añadir\nProducto</string>
+</resources>

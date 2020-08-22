@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="slateLightBlue">#6F63FF</color>
+    <color name="maroon">#7A0000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="linkWater">#CFD5E1</color>
+    <color name="ghost">#CDC7D1</color>
+    <color name="royalBlue">#3F64E1</color>
+    <color name="bahamaBlue">#223474</color>
+    <color name="fog">#E2D1EB</color>
+    <color name="deepLilac">#9741B5</color>
+    <color name="blueDiamond">#4A2C71</color>
+    <color name="purpleHeart">#5A15B5</color>
+    <color name="zucinni">#144919</color>
+</resources>
