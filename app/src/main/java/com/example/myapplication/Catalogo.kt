@@ -69,7 +69,7 @@ class Catalogo : AppCompatActivity() {
         return listaProductos
     }
 
-    private fun agregarProductoEnLista() {
+    fun agregarProductoEnLista() {
         /* TODO Implementar método que cambie instancia a una ficha vacía y si usuario confirma
         *   cambios añadir a lista de productos. Guardar en base de datos luego.*/
     }
@@ -78,7 +78,7 @@ class Catalogo : AppCompatActivity() {
         /* TODO Implementar método en ficha producto modo editar*/
     }
 
-    private fun editarProductoEnLista() {
+    fun editarProductoEnLista() {
         /* TODO Implementar método que cambie instancia a la ficha del producto seleccionado
         *   y permita guardar cambios en ese producto. Guardar en base de datos.*/
     }
