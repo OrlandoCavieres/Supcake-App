@@ -30,7 +30,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/tv_titulo_catalogo"
+        android:id="@+id/textView_tituloCatalogo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
@@ -48,7 +48,7 @@
         app:layout_constraintTop_toTopOf="@+id/include3" />
 
     <ListView
-        android:id="@+id/listv_productos"
+        android:id="@+id/listView_productosCatalogo"
         android:layout_width="300dp"
         android:layout_height="360dp"
         android:layout_marginTop="120dp"
@@ -69,6 +69,7 @@
         android:layout_marginBottom="184dp"
         android:background="@drawable/menu_rectangle"
         android:drawableStart="@drawable/add_icon"
+        android:drawableLeft="@drawable/add_icon"
         android:drawablePadding="5dp"
         android:fontFamily="@font/fira_mono_medium"
         android:gravity="start|center_vertical"
@@ -79,6 +80,23 @@
         android:textSize="14sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView_mensajeCatalogoVacio"
+        android:layout_width="290dp"
+        android:layout_height="213dp"
+        android:layout_marginTop="144dp"
+        android:background="@color/fog"
+        android:fontFamily="@font/nunito_sans"
+        android:gravity="center"
+        android:text="@string/txt_catalogoVacio"
+        android:textColor="@color/blueDiamond"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

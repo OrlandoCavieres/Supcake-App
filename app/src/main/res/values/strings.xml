@@ -23,6 +23,7 @@
     <string name="txt_cancelar">Cancelar</string>
     <string name="txt_guardarCambios">Guardar Cambios</string>
 
+    <string name="txt_catalogoVacio">El catálogo se encuentra vacío actualmente.</string>
     <string name="txt_nombreProducto">Nombre Producto</string>
     <string name="txt_precioProducto">Precio</string>
     <string name="txt_addProducto">Añadir\nProducto</string>

@@ -9,21 +9,23 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
 class Catalogo : AppCompatActivity() {
-    private var listaProductos: List<Producto> = listOf(
+
+    private var listaProductos: MutableList<Producto> = mutableListOf(
         Producto(0,"cake",1000,10, R.drawable.cake_photo),
         Producto(0,"cake",1000,10, R.drawable.cake_photo),
         Producto(0,"cake",1000,10, R.drawable.cake_photo),
         Producto(0,"cake",1000,10, R.drawable.cake_photo),
         Producto(0,"cake",1000,10, R.drawable.cake_photo),
+        Producto(0,"pancake",1000,10, R.drawable.cake_photo),
         Producto(0,"cake",1000,10, R.drawable.cake_photo),
         Producto(0,"cake",1000,10, R.drawable.cake_photo),
-        Producto(0,"cake",1000,10, R.drawable.cake_photo),
-        Producto(0,"cake",1000,10, R.drawable.cake_photo)
+        Producto(0,"atacake",1000,10, R.drawable.cake_photo)
     )
 
     private lateinit var listViewProductos: ListView
     private lateinit var volverAlMenu: Button
     private lateinit var addProducto: Button
+    private lateinit var catalogoVacio: TextView
 
     private var tipoIngreso: Int = 0
     private var nombreUsuario: String = ""
@@ -33,6 +35,7 @@ class Catalogo : AppCompatActivity() {
         setContentView(R.layout.activity_catalogo)
 
         this.obtenerListaProductoBaseDatos()
+        this.listaProductos.sortBy { it.nombre }
 
         nombreUsuario = intent.getStringExtra("nombreUsuario").toString()
         tipoIngreso = intent.getIntExtra("tipoUsuarioLogin", 0)
@@ -42,16 +45,33 @@ class Catalogo : AppCompatActivity() {
         addProducto = findViewById(R.id.boton_catalogo_addProducto)
         addProducto.setOnClickListener { accionBotonCambioActivity("NuevoProducto") }
 
-        listViewProductos = findViewById(R.id.listv_productos)
+        catalogoVacio = findViewById(R.id.textView_mensajeCatalogoVacio)
+
+        listViewProductos = findViewById(R.id.listView_productosCatalogo)
         val adaptadorCatalogo = AdaptadorProducto(this, listaProductos)
         listViewProductos.adapter = adaptadorCatalogo
 
-        when (tipoIngreso) {
-            0 -> { addProducto.visibility = Button.GONE
-                   val iconAdmin = findViewById<ImageView> (R.id.icon_properties_menu)
-                   iconAdmin.visibility = ImageView.GONE
-                   val textAdmin = findViewById<TextView> (R.id.txt_modAdministrador)
-                   textAdmin.visibility = TextView.GONE }
+        listViewProductos.setOnItemClickListener { _, _, posicion, _ ->
+            val accion = Intent(this, FichaProductoCatalogo::class.java)
+            accion.putExtra("producto", listaProductos[posicion])
+            accion.putExtra("tipoUsuarioLogin", this.tipoIngreso)
+            accion.putExtra("nombreUsuario", this.nombreUsuario)
+            startActivity(accion)
+        }
+
+        listViewProductos.setOnItemClickListener { adapterView, view, i, l ->  }
+        
+        if (listaProductos.isEmpty()) {
+            listViewProductos.visibility = ListView.GONE
+            catalogoVacio.visibility = TextView.VISIBLE
+        }
+
+        if (tipoIngreso == 0) {
+            addProducto.visibility = Button.GONE
+            val iconAdmin = findViewById<ImageView> (R.id.icon_properties_menu)
+            iconAdmin.visibility = ImageView.GONE
+            val textAdmin = findViewById<TextView> (R.id.txt_modAdministrador)
+            textAdmin.visibility = TextView.GONE
         }
     }
 
@@ -71,11 +91,11 @@ class Catalogo : AppCompatActivity() {
             y actualize la lista a presentar en seccion catalogo*/
     }
 
-    private fun quitarProductoEnLista() {
+    private fun quitarProducto() {
         /* TODO Implementar método en ficha producto modo editar*/
     }
 
-    fun editarProductoEnLista() {
+    fun editarProducto() {
         /* TODO Implementar método que cambie instancia a la ficha del producto seleccionado
         *   y permita guardar cambios en ese producto. Guardar en base de datos.*/
     }

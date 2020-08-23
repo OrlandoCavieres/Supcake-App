@@ -85,6 +85,6 @@ class NuevoProducto : AppCompatActivity() {
 
     private fun crearProducto() {
         TODO("Se necesita que la base de datos otorgue el id y guarde el producto para ser " +
-                "usado en el catalogo. */")
+                "usado en el catalogo")
     }
 }
