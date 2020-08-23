@@ -30,5 +30,6 @@
     <string name="txt_nuevaImagen">Nueva Imagen</string>
     <string name="txt_examinar">Examinar…</string>
     <string name="txt_stockDisponible">Stock Disponible</string>
-    <string name="txt_actualizarStock">Sumar o Restar Stock (Actualización)</string>
+    <string name="txt_actualizarStock">Actualizar Stock</string>
+    <string name="txt_hint_actualizarStock">+- cantidad</string>
 </resources>
