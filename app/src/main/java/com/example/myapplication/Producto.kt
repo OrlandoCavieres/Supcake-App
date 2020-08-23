@@ -12,6 +12,10 @@ class Producto(private val id: Int,
         return this.id
     }
 
+    fun obtenerStock(): Int {
+        return this.cantidad
+    }
+
     fun modificarCantidad(modificador: Int) {
         this.cantidad += modificador
     }
