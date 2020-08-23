@@ -11,15 +11,15 @@ import androidx.appcompat.app.AppCompatActivity
 class Catalogo : AppCompatActivity() {
 
     private var listaProductos: MutableList<Producto> = mutableListOf(
-        Producto(0,"cake",1000,10, R.drawable.cake_photo),
-        Producto(0,"cake",1000,10, R.drawable.cake_photo),
-        Producto(0,"cake",1000,10, R.drawable.cake_photo),
-        Producto(0,"cake",1000,10, R.drawable.cake_photo),
-        Producto(0,"cake",1000,10, R.drawable.cake_photo),
-        Producto(0,"pancake",1000,10, R.drawable.cake_photo),
-        Producto(0,"cake",1000,10, R.drawable.cake_photo),
-        Producto(0,"cake",1000,10, R.drawable.cake_photo),
-        Producto(0,"atacake",1000,10, R.drawable.cake_photo)
+        Producto(0,"cake",1000,1, R.drawable.cake_photo),
+        Producto(0,"cake",1000,2, R.drawable.cake_photo),
+        Producto(0,"cake",1000,3, R.drawable.cake_photo),
+        Producto(0,"cake",1000,4, R.drawable.cake_photo),
+        Producto(0,"cake",1000,5, R.drawable.cake_photo),
+        Producto(0,"pancake",1000,6, R.drawable.cake_photo),
+        Producto(0,"cake",1000,7, R.drawable.cake_photo),
+        Producto(0,"cake",1000,8, R.drawable.cake_photo),
+        Producto(0,"atacake",1000,9, R.drawable.cake_photo)
     )
 
     private lateinit var listViewProductos: ListView

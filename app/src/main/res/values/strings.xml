@@ -33,4 +33,6 @@
     <string name="txt_stockDisponible">Stock Disponible</string>
     <string name="txt_actualizarStock">Actualizar Stock</string>
     <string name="txt_hint_actualizarStock">+- cantidad</string>
+    <string name="txt_editarProducto">Editar Producto</string>
+    <string name="txt_eliminarProducto">Eliminar Producto</string>
 </resources>

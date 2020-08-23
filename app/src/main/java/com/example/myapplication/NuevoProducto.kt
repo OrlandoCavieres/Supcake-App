@@ -36,16 +36,18 @@ class NuevoProducto : AppCompatActivity() {
         precioNuevoProducto = findViewById(R.id.editText_precioNuevoProducto)
         stockNuevoProducto = findViewById(R.id.editText_stockDisponibleNuevoProducto)
         imagenNuevoProducto = findViewById(R.id.imgv_fotoNuevoProducto)
+
         examinarImagen = findViewById(R.id.boton_examinarImagen)
         examinarImagen.setOnClickListener { cambiarImagen() }
     }
 
     private fun cambiarImagen() {
-        TODO("Se necesita implementar una busqueda de imagen, reemplazarla en imageView " +
-                "imagenNuevoProducto para luego poder almacenarla en la base de datos o en drawable.")
+        /* TODO Se necesita implementar una busqueda de imagen, reemplazarla en imageView
+         *  imagenNuevoProducto para luego poder almacenarla en la base de datos o en drawable. */
     }
 
     private fun verificarCamposFormulario() {
+        var imagenIngresada = false
         val nombreProducto = nombreNuevoProducto.text.toString()
         val precioProducto = precioNuevoProducto.text.toString()
         val stockProducto = stockNuevoProducto.text.toString()
@@ -58,7 +60,11 @@ class NuevoProducto : AppCompatActivity() {
         if (stockProducto.isEmpty()) {
             Toast.makeText(this, "El producto debe tener un stock", Toast.LENGTH_SHORT).show()
         }
-        if (nombreProducto.isNotEmpty() && precioProducto.isNotEmpty() && stockProducto.isNotEmpty()) {
+        if (!imagenIngresada) {
+            /* TODO Usar funcion cambiar imagen aca, ya que no hay imagen.*/
+            imagenIngresada = true
+        }
+        if (nombreProducto.isNotEmpty() && precioProducto.isNotEmpty() && stockProducto.isNotEmpty() && imagenIngresada) {
             crearProducto()
             finish()
         }
@@ -71,7 +77,7 @@ class NuevoProducto : AppCompatActivity() {
     }
 
     private fun crearProducto() {
-        TODO("Se necesita que la base de datos otorgue el id y guarde el producto para ser " +
-                "usado en el catalogo")
+        /* TODO Se necesita que la base de datos otorgue el id y guarde el producto para ser
+            usado en el catalogo*/
     }
 }
