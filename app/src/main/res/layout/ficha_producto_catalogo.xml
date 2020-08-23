@@ -126,7 +126,7 @@
         app:layout_constraintGuide_begin="230dp" />
 
     <ImageView
-        android:id="@+id/imgv_fotoNuevoProducto2"
+        android:id="@+id/imgv_fotoProductoFicha"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:contentDescription="@string/sinTexto"
@@ -165,7 +165,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline33" />
 
     <TextView
-        android:id="@+id/textView_nombreNuevoProducto2"
+        android:id="@+id/textView_nombreProductoFicha"
         android:layout_width="144dp"
         android:layout_height="19dp"
         android:fontFamily="@font/fira_mono_medium"
@@ -176,7 +176,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline32" />
 
     <TextView
-        android:id="@+id/textView_stockDisponibleNuevoProducto2"
+        android:id="@+id/textView_stockDisponibleProductoFicha"
         android:layout_width="143dp"
         android:layout_height="18dp"
         android:fontFamily="@font/fira_mono_medium"
@@ -187,7 +187,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline40" />
 
     <TextView
-        android:id="@+id/textView_precioNuevoProducto2"
+        android:id="@+id/textView_precioProductoFicha"
         android:layout_width="58dp"
         android:layout_height="18dp"
         android:fontFamily="@font/fira_mono_medium"
@@ -198,7 +198,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline38" />
 
     <EditText
-        android:id="@+id/editText_NombreNuevoProducto2"
+        android:id="@+id/editText_cambioNombreProducto"
         android:layout_width="207dp"
         android:layout_height="26dp"
         android:autofillHints=""
@@ -212,7 +212,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline37" />
 
     <EditText
-        android:id="@+id/editText_precioNuevoProducto2"
+        android:id="@+id/editText_cambioPrecioProducto"
         android:layout_width="208dp"
         android:layout_height="26dp"
         android:autofillHints=""
@@ -226,22 +226,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline39" />
 
     <EditText
-        android:id="@+id/editText_stockDisponibleNuevoProducto2"
-        android:layout_width="208dp"
-        android:layout_height="26dp"
-        android:autofillHints=""
-        android:background="@color/fog"
-        android:clickable="false"
-        android:ems="10"
-        android:fontFamily="@font/fira_mono_medium"
-        android:hint="@string/sinTexto"
-        android:inputType="number"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toStartOf="@+id/guideline36"
-        app:layout_constraintTop_toTopOf="@+id/guideline41" />
-
-    <EditText
-        android:id="@+id/editText_stockDisponibleNuevoProducto3"
+        android:id="@+id/editText_modificarStockProducto"
         android:layout_width="208dp"
         android:layout_height="26dp"
         android:autofillHints=""
@@ -255,7 +240,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline43" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textView_actualizarStockProductoFicha"
         android:layout_width="179dp"
         android:layout_height="20dp"
         android:fontFamily="@font/fira_mono_medium"
@@ -264,4 +249,15 @@
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/guideline28"
         app:layout_constraintTop_toTopOf="@+id/guideline44" />
+
+    <TextView
+        android:id="@+id/textView_stockProductoDisponible"
+        android:layout_width="207dp"
+        android:layout_height="25dp"
+        android:background="@color/fog"
+        android:fontFamily="@font/fira_mono_medium"
+        android:text="@string/sinTexto"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline36"
+        app:layout_constraintTop_toTopOf="@+id/guideline41" />
 </androidx.constraintlayout.widget.ConstraintLayout>
