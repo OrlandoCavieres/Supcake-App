@@ -1,12 +1,12 @@
 package com.example.myapplication
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 
 class NuevoProducto : AppCompatActivity() {
 
@@ -21,20 +21,14 @@ class NuevoProducto : AppCompatActivity() {
     private lateinit var imagenNuevoProducto: ImageView
     private lateinit var examinarImagen: Button
 
-    private var tipoIngreso: Int = 0
-    private var nombreUsuario: String = ""
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_nuevo_producto)
 
-        nombreUsuario = intent.getStringExtra("nombreUsuario").toString()
-        tipoIngreso = intent.getIntExtra("tipoUsuarioLogin", 0)
-
         volverAlMenu = findViewById(R.id.boton_catalogo_volverAlMenu2)
-        volverAlMenu.setOnClickListener { accionBotonCambioActivity("VolverAlMenu") }
+        volverAlMenu.setOnClickListener { irAlMenuPrincipal() }
         cancelar = findViewById(R.id.boton_cancelarNuevoProducto)
-        cancelar.setOnClickListener { accionBotonCambioActivity("Cancelar") }
+        cancelar.setOnClickListener { finish() }
         guardar = findViewById(R.id.boton_guardarNuevoProducto)
         guardar.setOnClickListener { verificarCamposFormulario() }
 
@@ -59,27 +53,20 @@ class NuevoProducto : AppCompatActivity() {
             Toast.makeText(this, "Debe escribir un nombre al producto", Toast.LENGTH_SHORT).show()
         }
         if (precioProducto.isEmpty()) {
-            Toast.makeText(this,"El producto debe tener un precio", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "El producto debe tener un precio", Toast.LENGTH_SHORT).show()
         }
         if (stockProducto.isEmpty()) {
             Toast.makeText(this, "El producto debe tener un stock", Toast.LENGTH_SHORT).show()
         }
         if (nombreProducto.isNotEmpty() && precioProducto.isNotEmpty() && stockProducto.isNotEmpty()) {
-            this.accionBotonCambioActivity("GuardarCambios")
+            crearProducto()
+            finish()
         }
     }
 
-    private fun accionBotonCambioActivity(nombreAccion: String) {
-        val accion = when (nombreAccion) {
-            "VolverAlMenu" -> Intent(this, MenuPrincipal::class.java)
-            "Cancelar", "GuardarCambios" -> Intent(this, Catalogo::class.java)
-            else -> null
-        }
-        accion!!.putExtra("tipoUsuarioLogin", this.tipoIngreso)
-        accion.putExtra("nombreUsuario", this.nombreUsuario)
-        when (nombreAccion) {
-            "GuardarCambios" -> crearProducto()
-        }
+    private fun irAlMenuPrincipal() {
+        val accion = Intent(this, MenuPrincipal::class.java)
+            .setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP or Intent.FLAG_ACTIVITY_CLEAR_TOP)
         startActivity(accion)
     }
 

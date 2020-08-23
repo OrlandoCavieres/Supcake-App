@@ -16,6 +16,7 @@ class Login : AppCompatActivity() {
     private lateinit var cargando: ProgressBar
 
     private var tipoUsuario = 0
+    private var nombreUsuario = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,25 +41,23 @@ class Login : AppCompatActivity() {
         }
         if (usuario.isNotEmpty() && password.isNotEmpty()) {
             cargando.visibility = ProgressBar.VISIBLE
-            this.verificarUsuarioBaseDatos()
+            this.verificarUsuarioBaseDatos(usuario, password)
         }
     }
 
-    private fun verificarUsuarioBaseDatos() {
+    private fun verificarUsuarioBaseDatos(usuario: String, password: String) {
         /* TODO Implementar verificación con base de datos del usuario.
         *   Cambiar tipoUsuario segun corresponda. 1 = Admin, 0 = Vendedor*/
         this.tipoUsuario = 1
+        this.nombreUsuario = usuario
         inicioSesionCorrecto()
     }
 
     private fun inicioSesionCorrecto() {
         val inicio = Intent(this, MenuPrincipal::class.java)
-        val sesionUsuario = LoginCorrecto(this.tipoUsuario, usuarioIngresado.text.toString())
-        /* TODO Cambiar Clave de Instancia a una clase segura*/
-
         inicio.putExtra("tipoUsuarioLogin", this.tipoUsuario)
-        inicio.putExtra("nombreUsuario", usuarioIngresado.text.toString())
-        Toast.makeText(this, "¡Bienvenido, ${this.usuarioIngresado.text}!", Toast.LENGTH_SHORT).show()
+        inicio.putExtra("nombreUsuario", this.nombreUsuario)
+        Toast.makeText(this, "¡Bienvenido, ${this.nombreUsuario}!", Toast.LENGTH_SHORT).show()
         startActivity(inicio)
     }
 }
