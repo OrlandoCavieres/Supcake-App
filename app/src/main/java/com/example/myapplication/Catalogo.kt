@@ -38,9 +38,9 @@ class Catalogo : AppCompatActivity() {
         tipoIngreso = intent.getIntExtra("tipoUsuarioLogin", 0)
 
         volverAlMenu = findViewById(R.id.boton_catalogo_volverAlMenu)
-        volverAlMenu.setOnClickListener { irAlMenuDesdeCatalogo() }
+        volverAlMenu.setOnClickListener { accionBotonCambioActivity("VolverAlMenu") }
         addProducto = findViewById(R.id.boton_catalogo_addProducto)
-        addProducto.setOnClickListener { fichaNuevoProducto() }
+        addProducto.setOnClickListener { accionBotonCambioActivity("NuevoProducto") }
 
         listViewProductos = findViewById(R.id.listv_productos)
         val adaptadorCatalogo = AdaptadorProducto(this, listaProductos)
@@ -55,27 +55,20 @@ class Catalogo : AppCompatActivity() {
         }
     }
 
-    private fun irAlMenuDesdeCatalogo() {
-        val irAlMenu = Intent(this, MenuPrincipal::class.java)
-        irAlMenu.putExtra("tipoUsuarioLogin", this.tipoIngreso)
-        irAlMenu.putExtra("nombreUsuario", this.nombreUsuario)
-        startActivity(irAlMenu)
-    }
-
-    private fun fichaNuevoProducto() {
-        val fichaProducto = Intent(this, NuevoProducto::class.java)
-        fichaProducto.putExtra("tipoUsuarioLogin", this.tipoIngreso)
-        fichaProducto.putExtra("nombreUsuario", this.nombreUsuario)
-        startActivity(fichaProducto)
+    private fun accionBotonCambioActivity(nombreAccion: String) {
+        val accion = when (nombreAccion) {
+            "VolverAlMenu" -> Intent(this, MenuPrincipal::class.java)
+            "NuevoProducto" -> Intent(this, NuevoProducto::class.java)
+            else -> null
+        }
+        accion!!.putExtra("tipoUsuarioLogin", this.tipoIngreso)
+        accion.putExtra("nombreUsuario", this.nombreUsuario)
+        startActivity(accion)
     }
 
     private fun obtenerListaProductoBaseDatos() {
         /* TODO Implementar método que pregunte a la base de datos la lista de productos y
         *   actualize la lista a representar en seccion catalogo.*/
-    }
-
-    fun obtenerListaProductos(): List<Producto> {
-        return listaProductos
     }
 
     fun agregarProductoALista() {
