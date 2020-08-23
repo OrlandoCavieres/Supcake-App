@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.Toast
 
 class NuevoProducto : AppCompatActivity() {
@@ -16,6 +17,9 @@ class NuevoProducto : AppCompatActivity() {
     private lateinit var nombreNuevoProducto: EditText
     private lateinit var precioNuevoProducto: EditText
     private lateinit var stockNuevoProducto: EditText
+
+    private lateinit var imagenNuevoProducto: ImageView
+    private lateinit var examinarImagen: Button
 
     private var tipoIngreso: Int = 0
     private var nombreUsuario: String = ""
@@ -37,6 +41,14 @@ class NuevoProducto : AppCompatActivity() {
         nombreNuevoProducto = findViewById(R.id.editText_NombreNuevoProducto)
         precioNuevoProducto = findViewById(R.id.editText_precioNuevoProducto)
         stockNuevoProducto = findViewById(R.id.editText_stockDisponibleNuevoProducto)
+        imagenNuevoProducto = findViewById(R.id.imgv_fotoNuevoProducto)
+        examinarImagen = findViewById(R.id.boton_examinarImagen)
+        examinarImagen.setOnClickListener { cambiarImagen() }
+    }
+
+    private fun cambiarImagen() {
+        TODO("Se necesita implementar una busqueda de imagen, reemplazarla en imageView " +
+                "imagenNuevoProducto para luego poder almacenarla en la base de datos o en drawable.")
     }
 
     private fun verificarCamposFormulario() {
@@ -72,7 +84,7 @@ class NuevoProducto : AppCompatActivity() {
     }
 
     private fun crearProducto() {
-        /* TODO Se necesita que la base de datos otorgue el id y guarde el producto para ser usado
-        *   en el catalogo. */
+        TODO("Se necesita que la base de datos otorgue el id y guarde el producto para ser " +
+                "usado en el catalogo. */")
     }
 }
