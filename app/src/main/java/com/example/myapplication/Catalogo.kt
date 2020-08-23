@@ -67,13 +67,8 @@ class Catalogo : AppCompatActivity() {
     }
 
     private fun obtenerListaProductoBaseDatos() {
-        /* TODO Implementar método que pregunte a la base de datos la lista de productos y
-        *   actualize la lista a representar en seccion catalogo.*/
-    }
-
-    fun agregarProductoALista() {
-        /* TODO Implementar método que cambie instancia a una ficha vacía y si usuario confirma
-        *   cambios añadir a lista de productos. Guardar en base de datos luego.*/
+        TODO("Implementar método que pregunte a la base de datos la lista de " +
+                "productos y actualize la lista a presentar en seccion catalogo.")
     }
 
     private fun quitarProductoEnLista() {
