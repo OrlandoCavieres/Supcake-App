@@ -9,7 +9,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
 class Catalogo : AppCompatActivity() {
-    private val listaProductos: List<Producto> = listOf(
+    private var listaProductos: List<Producto> = listOf(
         Producto(0,"cake",1000,10, R.drawable.cake_photo),
         Producto(0,"cake",1000,10, R.drawable.cake_photo),
         Producto(0,"cake",1000,10, R.drawable.cake_photo),
@@ -32,13 +32,15 @@ class Catalogo : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_catalogo)
 
+        this.obtenerListaProductoBaseDatos()
+
         nombreUsuario = intent.getStringExtra("nombreUsuario").toString()
         tipoIngreso = intent.getIntExtra("tipoUsuarioLogin", 0)
 
         volverAlMenu = findViewById(R.id.boton_catalogo_volverAlMenu)
         volverAlMenu.setOnClickListener { irAlMenuDesdeCatalogo() }
         addProducto = findViewById(R.id.boton_catalogo_addProducto)
-        addProducto.setOnClickListener { irAlMenuDesdeCatalogo() }
+        addProducto.setOnClickListener { fichaNuevoProducto() }
 
         listViewProductos = findViewById(R.id.listv_productos)
         val adaptadorCatalogo = AdaptadorProducto(this, listaProductos)
@@ -60,7 +62,14 @@ class Catalogo : AppCompatActivity() {
         startActivity(irAlMenu)
     }
 
-    private fun obtenerListaDeBaseDatos() {
+    private fun fichaNuevoProducto() {
+        val fichaProducto = Intent(this, NuevoProducto::class.java)
+        fichaProducto.putExtra("tipoUsuarioLogin", this.tipoIngreso)
+        fichaProducto.putExtra("nombreUsuario", this.nombreUsuario)
+        startActivity(fichaProducto)
+    }
+
+    private fun obtenerListaProductoBaseDatos() {
         /* TODO Implementar método que pregunte a la base de datos la lista de productos y
         *   actualize la lista a representar en seccion catalogo.*/
     }
@@ -69,7 +78,7 @@ class Catalogo : AppCompatActivity() {
         return listaProductos
     }
 
-    fun agregarProductoEnLista() {
+    fun agregarProductoALista() {
         /* TODO Implementar método que cambie instancia a una ficha vacía y si usuario confirma
         *   cambios añadir a lista de productos. Guardar en base de datos luego.*/
     }

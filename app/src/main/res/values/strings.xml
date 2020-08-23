@@ -20,8 +20,15 @@
 
     <string name="txt_modoAdministrador">Modo\nAdministrador</string>
     <string name="txt_volverAlMenu">Volver al Menu</string>
+    <string name="txt_cancelar">Cancelar</string>
+    <string name="txt_guardarCambios">Guardar Cambios</string>
 
     <string name="txt_nombreProducto">Nombre Producto</string>
     <string name="txt_precioProducto">Precio</string>
     <string name="txt_addProducto">Añadir\nProducto</string>
+    <string name="txt_tituloFichaNuevoProducto">Añadir Nuevo Producto</string>
+    <string name="txt_nuevaImagen">Nueva Imagen</string>
+    <string name="txt_examinar">Examinar…</string>
+    <string name="txt_stockDisponible">Stock Disponible</string>
+    <string name="txt_actualizarStock">Sumar o Restar Stock (Actualización)</string>
 </resources>
