@@ -56,7 +56,7 @@ class Login : AppCompatActivity() {
     private fun inicioSesionCorrecto() {
         val inicio = Intent(this, MenuPrincipal::class.java)
         inicio.putExtra("tipoUsuarioLogin", this.tipoUsuario)
-        inicio.putExtra("nombreUsuario", this.nombreUsuario)
+        inicio.putExtra("nombreUsuarioLogin", this.nombreUsuario)
         Toast.makeText(this, "¡Bienvenido, ${this.nombreUsuario}!", Toast.LENGTH_SHORT).show()
         startActivity(inicio)
     }

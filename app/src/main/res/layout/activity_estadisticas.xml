@@ -7,11 +7,216 @@
     tools:context=".Estadisticas">
 
     <include
+        android:id="@+id/include8"
         layout="@layout/borde_secciones_administrador"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline45"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="100dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline46"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="240dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline49"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="310dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline52"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="380dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline47"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="170dp" />
+
+    <TextView
+        android:id="@+id/textView_tituloEstadisticas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/titulo_seccion"
+        android:fontFamily="@font/patrick_hand_sc"
+        android:gravity="center|center_vertical"
+        android:text="@string/txt_estadisticas"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView_estadisticas_subtituloProducto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/fira_mono_medium"
+        android:text="@string/txt_nombreProducto"
+        android:textColor="@color/blueDiamond"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.165"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline45" />
+
+    <TextView
+        android:id="@+id/textView_estadisticas_subtituloVendedor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/fira_mono_medium"
+        android:text="@string/txt_nombreVendedorTitulo"
+        android:textColor="@color/blueDiamond"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.165"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline47" />
+
+    <TextView
+        android:id="@+id/textView_estadisticas_subtituloFechaInicial"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/fira_mono_medium"
+        android:text="@string/txt_fechaInicial"
+        android:textColor="@color/blueDiamond"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.155"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline46" />
+
+    <TextView
+        android:id="@+id/textView_estadisticas_subtituloFechaFinal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/fira_mono_medium"
+        android:text="@string/txt_fechaFinal"
+        android:textColor="@color/blueDiamond"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.142"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline49" />
+
+    <EditText
+        android:id="@+id/editText_estadisticas_filtroProducto"
+        android:layout_width="316dp"
+        android:layout_height="26dp"
+        android:layout_marginTop="40dp"
+        android:autofillHints=""
+        android:background="@color/white"
+        android:ems="10"
+        android:fontFamily="@font/fira_mono_medium"
+        android:gravity="center_vertical"
+        android:hint="@string/txt_opcional"
+        android:inputType="textPersonName"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline45" />
+
+    <EditText
+        android:id="@+id/editText_estadisticas_filtroVendedor"
+        android:layout_width="316dp"
+        android:layout_height="26dp"
+        android:layout_marginTop="40dp"
+        android:autofillHints=""
+        android:background="@color/white"
+        android:ems="10"
+        android:fontFamily="@font/fira_mono_medium"
+        android:hint="@string/txt_opcional"
+        android:inputType="textPersonName"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline47" />
+
+    <TextView
+        android:id="@+id/textView_estadisticas_filtroFechaInicial"
+        android:layout_width="278dp"
+        android:layout_height="26dp"
+        android:layout_marginTop="40dp"
+        android:background="@color/white"
+        android:fontFamily="@font/fira_mono_medium"
+        android:text="@string/txt_hint_formatofecha"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.339"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline46" />
+
+    <ImageButton
+        android:id="@+id/boton_verCalendarioFechaInicial"
+        android:layout_width="33dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="40dp"
+        android:background="@color/ghost"
+        android:contentDescription="@string/sinTexto"
+        app:layout_constraintBottom_toTopOf="@+id/guideline49"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline46"
+        app:srcCompat="@drawable/calendar_icon" />
+
+    <TextView
+        android:id="@+id/textView_estadisticas_filtroFechaFinal"
+        android:layout_width="278dp"
+        android:layout_height="26dp"
+        android:layout_marginTop="40dp"
+        android:background="@color/white"
+        android:fontFamily="@font/fira_mono_medium"
+        android:text="@string/txt_hint_formatofecha"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.339"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline49" />
+
+    <ImageButton
+        android:id="@+id/boton_verCalendarioFechaFinal"
+        android:layout_width="33dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="40dp"
+        android:background="@color/ghost"
+        android:contentDescription="@string/sinTexto"
+        app:layout_constraintBottom_toTopOf="@+id/guideline52"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline49"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/calendar_icon" />
 
     <Button
         android:id="@+id/boton_estadisticas_volverAlMenu"
@@ -27,4 +232,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

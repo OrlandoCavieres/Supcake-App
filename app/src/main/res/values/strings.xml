@@ -35,4 +35,10 @@
     <string name="txt_hint_actualizarStock">+- cantidad</string>
     <string name="txt_editarProducto">Editar Producto</string>
     <string name="txt_eliminarProducto">Eliminar Producto</string>
+
+    <string name="txt_nombreVendedorTitulo">Nombre Vendedor</string>
+    <string name="txt_fechaInicial">Fecha Inicial</string>
+    <string name="txt_fechaFinal">Fecha Final</string>
+    <string name="txt_opcional">(opcional)</string>
+    <string name="txt_hint_formatofecha">DD/MM/AAAA</string>
 </resources>
