@@ -13,6 +13,7 @@ import java.util.*
 class Estadisticas : AppCompatActivity() {
 
     private lateinit var volverAlMenu: Button
+    private lateinit var obtenerEstadisticas: Button
 
     private lateinit var nombreProducto: EditText
     private lateinit var nombreVendedor: EditText
@@ -43,6 +44,9 @@ class Estadisticas : AppCompatActivity() {
 
         volverAlMenu = findViewById(R.id.boton_estadisticas_volverAlMenu)
         volverAlMenu.setOnClickListener { finish() }
+
+        obtenerEstadisticas = findViewById(R.id.boton_estadisticas_obtenerEstadisticas)
+        obtenerEstadisticas.setOnClickListener {  }
 
         calendarioFechaInicial.setOnClickListener {
             val now = Calendar.getInstance()

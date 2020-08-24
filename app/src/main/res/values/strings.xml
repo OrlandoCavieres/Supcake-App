@@ -41,4 +41,6 @@
     <string name="txt_fechaFinal">Fecha Final</string>
     <string name="txt_opcional">(opcional)</string>
     <string name="txt_hint_formatofecha">DD/MM/AAAA</string>
+    <string name="txt_obtenerEstadisticas">Obtener Estadísticas</string>
+
 </resources>
