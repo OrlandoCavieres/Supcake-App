@@ -26,9 +26,15 @@ class NuevoProducto : AppCompatActivity() {
         setContentView(R.layout.activity_nuevo_producto)
 
         volverAlMenu = findViewById(R.id.boton_catalogo_volverAlMenu2)
-        volverAlMenu.setOnClickListener { irAlMenuPrincipal() }
+        volverAlMenu.setOnClickListener {
+            val accion = Intent(this, MenuPrincipal::class.java)
+                .setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP or Intent.FLAG_ACTIVITY_CLEAR_TOP)
+            startActivity(accion)
+        }
+
         cancelar = findViewById(R.id.boton_cancelarNuevoProducto)
         cancelar.setOnClickListener { finish() }
+
         guardar = findViewById(R.id.boton_guardarNuevoProducto)
         guardar.setOnClickListener { verificarCamposFormulario() }
 
@@ -68,12 +74,6 @@ class NuevoProducto : AppCompatActivity() {
             crearProducto()
             finish()
         }
-    }
-
-    private fun irAlMenuPrincipal() {
-        val accion = Intent(this, MenuPrincipal::class.java)
-            .setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP or Intent.FLAG_ACTIVITY_CLEAR_TOP)
-        startActivity(accion)
     }
 
     private fun crearProducto() {

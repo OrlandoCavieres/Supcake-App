@@ -4,14 +4,54 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Clientes">
+    tools:context=".SeccionClientes">
 
     <include
+        android:id="@+id/include9"
         layout="@layout/borde_secciones_administrador"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp" />
+
+    <TextView
+        android:id="@+id/textView_titulo_clientes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/titulo_seccion"
+        android:fontFamily="@font/patrick_hand_sc"
+        android:gravity="center"
+        android:text="@string/txt_clientes"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:typeface="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/include9" />
+
+    <Button
+        android:id="@+id/boton_clientes_addCliente"
+        android:layout_width="125dp"
+        android:layout_height="54dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/menu_rectangle"
+        android:drawableStart="@drawable/add_icon"
+        android:drawableLeft="@drawable/add_icon"
+        android:drawablePadding="5dp"
+        android:fontFamily="@font/fira_mono_medium"
+        android:gravity="start|center_vertical"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:text="@string/txt_addCliente"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/boton_clientes_volverAlMenu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/boton_clientes_volverAlMenu"
@@ -27,5 +67,17 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ListView
+        android:id="@+id/listView_planillaClientes"
+        android:layout_width="320dp"
+        android:layout_height="380dp"
+        android:background="@color/fog"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.534"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.338" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

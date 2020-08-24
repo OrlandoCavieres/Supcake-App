@@ -8,7 +8,7 @@ import android.widget.ListView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
-class Catalogo : AppCompatActivity() {
+class CatalogoProductos : AppCompatActivity() {
 
     private var listaProductos: MutableList<Producto> = mutableListOf(
         Producto(0,"cake",1000,1, R.drawable.cake_photo),

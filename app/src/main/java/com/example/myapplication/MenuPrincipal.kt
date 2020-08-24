@@ -49,9 +49,9 @@ class MenuPrincipal : AppCompatActivity() {
 
     private fun abrirSeccion(seccion: String) {
         val nuevaPagina = when (seccion) {
-            "Catalogo" -> Intent(this, Catalogo::class.java)
+            "Catalogo" -> Intent(this, CatalogoProductos::class.java)
             "NuevaVenta" -> Intent(this, NuevaVenta::class.java)
-            "Clientes" -> Intent(this, Clientes::class.java)
+            "Clientes" -> Intent(this, SeccionClientes::class.java)
             "Estadisticas" -> Intent(this, Estadisticas::class.java)
             else -> null
         }
