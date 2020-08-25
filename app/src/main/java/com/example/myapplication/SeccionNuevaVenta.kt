@@ -15,7 +15,7 @@ class SeccionNuevaVenta : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_nueva_venta)
 
-        nombreUsuario = intent.getStringExtra("nombreUsuario").toString()
+        nombreUsuario = intent.getStringExtra("nombreUsuarioLogin").toString()
         tipoIngreso = intent.getIntExtra("tipoUsuarioLogin", 0)
 
         volverAlMenu = findViewById(R.id.boton_nuevaVenta_volverAlMenu)

@@ -31,7 +31,7 @@ class Estadisticas : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_estadisticas)
 
-        nombreUsuario = intent.getStringExtra("nombreUsuario").toString()
+        nombreUsuario = intent.getStringExtra("nombreUsuarioLogin").toString()
         tipoIngreso = intent.getIntExtra("tipoUsuarioLogin", 0)
 
         nombreProducto = findViewById(R.id.editText_estadisticas_filtroProducto)

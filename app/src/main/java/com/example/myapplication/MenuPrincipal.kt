@@ -33,7 +33,7 @@ class MenuPrincipal : AppCompatActivity() {
         botonEstadisticas = findViewById(R.id.boton_estadisticas)
         botonEstadisticas.setOnClickListener { abrirSeccion("Estadisticas") }
 
-        nombreUsuario = intent.getStringExtra("nombreUsuario").toString()
+        nombreUsuario = intent.getStringExtra("nombreUsuarioLogin").toString()
         tipoIngreso = intent.getIntExtra("tipoUsuarioLogin", 0)
 
         when (tipoIngreso) {
@@ -56,7 +56,7 @@ class MenuPrincipal : AppCompatActivity() {
             else -> null
         }
         nuevaPagina!!.putExtra("tipoUsuarioLogin", this.tipoIngreso)
-        nuevaPagina.putExtra("nombreUsuario", this.nombreUsuario)
+        nuevaPagina.putExtra("nombreUsuarioLogin", this.nombreUsuario)
         startActivity(nuevaPagina)
     }
 }
