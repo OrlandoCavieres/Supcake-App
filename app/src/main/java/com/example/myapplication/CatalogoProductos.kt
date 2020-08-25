@@ -27,6 +27,8 @@ class CatalogoProductos : AppCompatActivity() {
     private lateinit var addProducto: Button
     private lateinit var catalogoVacio: TextView
 
+    private lateinit var adaptadorCatalogo: AdaptadorProducto
+
     private var tipoIngreso: Int = 0
     private var nombreUsuario: String = ""
 
@@ -37,7 +39,7 @@ class CatalogoProductos : AppCompatActivity() {
         this.obtenerListaProductoBaseDatos()
         this.listaProductos.sortBy { it.nombre }
 
-        nombreUsuario = intent.getStringExtra("nombreUsuario").toString()
+        nombreUsuario = intent.getStringExtra("nombreUsuarioLogin").toString()
         tipoIngreso = intent.getIntExtra("tipoUsuarioLogin", 0)
 
         volverAlMenu = findViewById(R.id.boton_catalogo_volverAlMenu)
@@ -47,21 +49,21 @@ class CatalogoProductos : AppCompatActivity() {
         addProducto.setOnClickListener {
             val accion = Intent(this, NuevoProducto::class.java)
             accion.putExtra("tipoUsuarioLogin", this.tipoIngreso)
-            accion.putExtra("nombreUsuario", this.nombreUsuario)
+            accion.putExtra("nombreUsuarioLogin", this.nombreUsuario)
             startActivity(accion)
         }
 
         catalogoVacio = findViewById(R.id.textView_mensajeCatalogoVacio)
 
         listViewProductos = findViewById(R.id.listView_productosCatalogo)
-        val adaptadorCatalogo = AdaptadorProducto(this, listaProductos)
+        adaptadorCatalogo = AdaptadorProducto(this, listaProductos)
         listViewProductos.adapter = adaptadorCatalogo
 
         listViewProductos.setOnItemClickListener { _, _, posicion, _ ->
             val accion = Intent(this, FichaProductoCatalogo::class.java)
             accion.putExtra("producto", listaProductos[posicion])
             accion.putExtra("tipoUsuarioLogin", this.tipoIngreso)
-            accion.putExtra("nombreUsuario", this.nombreUsuario)
+            accion.putExtra("nombreUsuarioLogin", this.nombreUsuario)
             startActivity(accion)
         }
 
@@ -77,6 +79,12 @@ class CatalogoProductos : AppCompatActivity() {
             val textAdmin = findViewById<TextView> (R.id.txt_modAdministrador)
             textAdmin.visibility = TextView.GONE
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        this.obtenerListaProductoBaseDatos()
+        this.adaptadorCatalogo.notifyDataSetChanged()
     }
 
     private fun obtenerListaProductoBaseDatos() {
