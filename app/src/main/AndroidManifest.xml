@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".FichaProductoCatalogo"></activity>
+        <activity android:name=".NuevoCliente"></activity>
+        <activity android:name=".FichaProductoCatalogo" />
         <activity android:name=".NuevoProducto" />
         <activity android:name=".Login">
             <intent-filter>
@@ -19,9 +20,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".Estadisticas" />
-        <activity android:name=".Clientes" />
-        <activity android:name=".NuevaVenta" />
-        <activity android:name=".Catalogo" />
+        <activity android:name=".SeccionClientes" />
+        <activity android:name=".SeccionNuevaVenta" />
+        <activity android:name=".CatalogoProductos" />
         <activity android:name=".MenuPrincipal" />
 
         <meta-data
