@@ -11,8 +11,10 @@
         layout="@layout/borde_secciones_administrador"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView_titulo_clientes"
@@ -28,15 +30,14 @@
         android:textSize="24sp"
         android:textStyle="bold"
         android:typeface="normal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/include9"
+        app:layout_constraintStart_toStartOf="@+id/include9"
         app:layout_constraintTop_toTopOf="@+id/include9" />
 
     <Button
         android:id="@+id/boton_clientes_addCliente"
         android:layout_width="125dp"
         android:layout_height="54dp"
-        android:layout_marginBottom="5dp"
         android:background="@drawable/menu_rectangle"
         android:drawableStart="@drawable/add_icon"
         android:drawableLeft="@drawable/add_icon"
@@ -49,35 +50,53 @@
         android:textColor="@color/white"
         android:textSize="14sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/boton_clientes_volverAlMenu"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/include9"
+        app:layout_constraintStart_toStartOf="@+id/include9"
+        app:layout_constraintTop_toTopOf="@+id/guideline90" />
 
     <Button
         android:id="@+id/boton_clientes_volverAlMenu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="120dp"
+        android:layout_width="280dp"
+        android:layout_height="35dp"
         android:background="@drawable/back_rectangle"
         android:fontFamily="@font/patrick_hand_sc"
         android:text="@string/txt_volverAlMenu"
         android:textColor="@color/white"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/include9"
+        app:layout_constraintStart_toStartOf="@+id/include9"
+        app:layout_constraintTop_toTopOf="@+id/guideline88" />
 
     <ListView
         android:id="@+id/listView_planillaClientes"
         android:layout_width="300dp"
-        android:layout_height="380dp"
+        android:layout_height="320dp"
         android:background="@color/fog"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/include9"
         app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.338" />
+        app:layout_constraintStart_toStartOf="@+id/include9"
+        app:layout_constraintTop_toTopOf="@+id/guideline89" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline88"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="570dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline89"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="125dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline90"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="475dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
