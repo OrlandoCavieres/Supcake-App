@@ -92,13 +92,13 @@ class FichaProductoCatalogo : AppCompatActivity() {
     private fun modificarProductoBD(producto: Producto) {
         /* TODO metodo para modificar la base de datos en base a los cambios realizados
         *   en la instancia producto con su respectivo ID*/
-        val id = producto.getID()
+        val id = producto.obtenerID()
         println(id)
     }
 
     private fun quitarProductoBD(producto: Producto) {
         /* TODO metodo para eliminar un producto de la base de datos */
-        val id = producto.getID()
+        val id = producto.obtenerID()
         println(id)
         finish()
     }

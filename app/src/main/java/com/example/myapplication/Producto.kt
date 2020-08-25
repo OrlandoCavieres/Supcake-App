@@ -8,7 +8,7 @@ class Producto(private val id: Int,
                private var cantidad: Int,
                var imagen: Int): Serializable {
 
-    fun getID(): Int {
+    fun obtenerID(): Int {
         return this.id
     }
 
