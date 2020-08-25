@@ -33,13 +33,13 @@ class Login : AppCompatActivity() {
     private fun verificarDatosLogin() {
         val usuario = usuarioIngresado.text.toString()
         val password = passwordIngresado.text.toString()
-        if (usuario.isEmpty()) {
+        if (usuario.isBlank()) {
             Toast.makeText(this, "Debe ingresar el nombre de usuario", Toast.LENGTH_SHORT).show()
         }
-        if (password.isEmpty()) {
+        if (password.isBlank()) {
             Toast.makeText(this, "Debe ingresar una contraseña", Toast.LENGTH_SHORT).show()
         }
-        if (usuario.isNotEmpty() && password.isNotEmpty()) {
+        if (usuario.isNotBlank() && password.isNotBlank()) {
             cargando.visibility = ProgressBar.VISIBLE
             this.verificarUsuarioBaseDatos(usuario, password)
         }

@@ -57,20 +57,20 @@ class NuevoProducto : AppCompatActivity() {
         val nombreProducto = nombreNuevoProducto.text.toString()
         val precioProducto = precioNuevoProducto.text.toString()
         val stockProducto = stockNuevoProducto.text.toString()
-        if (nombreProducto.isEmpty()) {
+        if (nombreProducto.isBlank()) {
             Toast.makeText(this, "Debe escribir un nombre al producto", Toast.LENGTH_SHORT).show()
         }
-        if (precioProducto.isEmpty()) {
+        if (precioProducto.isBlank()) {
             Toast.makeText(this, "El producto debe tener un precio", Toast.LENGTH_SHORT).show()
         }
-        if (stockProducto.isEmpty()) {
+        if (stockProducto.isBlank()) {
             Toast.makeText(this, "El producto debe tener un stock", Toast.LENGTH_SHORT).show()
         }
         if (!imagenIngresada) {
             /* TODO Usar funcion cambiar imagen aca, ya que no hay imagen.*/
             imagenIngresada = true
         }
-        if (nombreProducto.isNotEmpty() && precioProducto.isNotEmpty() && stockProducto.isNotEmpty() && imagenIngresada) {
+        if (nombreProducto.isNotBlank() && precioProducto.isNotBlank() && stockProducto.isNotBlank() && imagenIngresada) {
             crearProducto()
             finish()
         }
