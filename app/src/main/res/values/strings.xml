@@ -17,6 +17,7 @@
 
     <string name="sinTexto"> </string>
     <string name="TextView">TextView</string>
+    <string name="txt_ID">ID</string>
 
     <string name="txt_modoAdministrador">Modo\nAdministrador</string>
     <string name="txt_volverAlMenu">Volver al Menu</string>
@@ -47,4 +48,8 @@
     <string name="txt_tituloFichaNuevoCliente">Añadir Nuevo Cliente</string>
     <string name="txt_nombreCliente">Nombre Cliente</string>
     <string name="txt_direccionCliente">Dirección Cliente</string>
+    <string name="txt_confirmarEliminarCliente">¿Está seguro que desea eliminar al cliente de la planilla?</string>
+
+    <string name="txt_SI">SI</string>
+    <string name="txt_NO">NO</string>
 </resources>
