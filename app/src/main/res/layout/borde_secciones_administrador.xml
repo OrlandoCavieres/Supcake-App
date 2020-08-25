@@ -10,35 +10,46 @@
         layout="@layout/borde_secciones"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:visibility="visible" />
 
     <ImageView
         android:id="@+id/icon_properties_menu"
-        android:layout_width="59dp"
-        android:layout_height="59dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginRight="40dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="321dp"
+        android:layout_marginLeft="321dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
         android:layout_marginBottom="44dp"
         android:contentDescription="@string/sinTexto"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/include"
+        app:layout_constraintEnd_toEndOf="@id/include"
+        app:layout_constraintStart_toStartOf="@+id/include"
         app:srcCompat="@drawable/properties" />
 
     <TextView
         android:id="@+id/txt_modAdministrador"
-        android:layout_width="wrap_content"
+        android:layout_width="109dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="48dp"
+        android:layout_marginStart="172dp"
+        android:layout_marginLeft="172dp"
+        android:layout_marginBottom="44dp"
         android:contentDescription="@string/sinTexto"
         android:fontFamily="@font/fira_mono_medium"
         android:gravity="end"
         android:text="@string/txt_modoAdministrador"
         android:textColor="@color/zucinni"
-        android:textSize="18sp"
+        android:textSize="14sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/include"
         app:layout_constraintEnd_toStartOf="@+id/icon_properties_menu"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="@+id/include" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

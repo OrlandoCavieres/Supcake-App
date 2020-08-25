@@ -11,8 +11,10 @@
         layout="@layout/borde_secciones_administrador"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView_titulo_catalogo_NuevoProducto"
@@ -28,43 +30,42 @@
         android:textSize="24sp"
         android:textStyle="bold"
         android:typeface="normal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/include6"
+        app:layout_constraintStart_toStartOf="@+id/include6"
         app:layout_constraintTop_toTopOf="@+id/include6" />
 
     <TextView
         android:id="@+id/textView_subtitulo_seccionNuevoProducto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:fontFamily="@font/patrick_hand_sc"
         android:text="@string/txt_tituloFichaNuevoProducto"
         android:textColor="@color/blueDiamond"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_titulo_catalogo_NuevoProducto" />
+        app:layout_constraintEnd_toEndOf="@+id/include6"
+        app:layout_constraintStart_toStartOf="@+id/include6"
+        app:layout_constraintTop_toTopOf="@+id/guideline81" />
 
     <Button
         android:id="@+id/boton_catalogo_volverAlMenu2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="120dp"
+        android:layout_width="280dp"
+        android:layout_height="35dp"
         android:background="@drawable/back_rectangle"
         android:fontFamily="@font/patrick_hand_sc"
         android:text="@string/txt_volverAlMenu"
         android:textColor="@color/white"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/include6"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="@+id/include6"
+        app:layout_constraintTop_toTopOf="@+id/guideline84" />
 
     <Button
         android:id="@+id/boton_cancelarNuevoProducto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="280dp"
+        android:layout_height="35dp"
         android:layout_marginBottom="5dp"
         android:background="@drawable/back_rectangle"
         android:fontFamily="@font/patrick_hand_sc"
@@ -72,14 +73,14 @@
         android:textColor="@color/white"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/boton_catalogo_volverAlMenu2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/guideline84"
+        app:layout_constraintEnd_toEndOf="@+id/include6"
+        app:layout_constraintStart_toStartOf="@+id/include6" />
 
     <Button
         android:id="@+id/boton_guardarNuevoProducto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="280dp"
+        android:layout_height="35dp"
         android:layout_marginBottom="5dp"
         android:background="@drawable/after_rectangle"
         android:fontFamily="@font/patrick_hand_sc"
@@ -88,19 +89,45 @@
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/boton_cancelarNuevoProducto"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/include6"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="@+id/include6" />
 
     <include
         layout="@layout/formulario_nuevo_producto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/boton_guardarNuevoProducto"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/include6"
         app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_subtitulo_seccionNuevoProducto"
-        app:layout_constraintVertical_bias="0.102" />
+        app:layout_constraintStart_toStartOf="@+id/include6"
+        app:layout_constraintTop_toTopOf="@+id/guideline82" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline81"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="90dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline82"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="125dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline83"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="451dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline84"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="570dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

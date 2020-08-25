@@ -11,23 +11,25 @@
         layout="@layout/borde_secciones_administrador"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/boton_catalogo_volverAlMenu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="120dp"
+        android:layout_width="280dp"
+        android:layout_height="35dp"
         android:background="@drawable/back_rectangle"
         android:fontFamily="@font/patrick_hand_sc"
         android:text="@string/txt_volverAlMenu"
         android:textColor="@color/white"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/include3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/include3"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="@+id/include3"
+        app:layout_constraintTop_toTopOf="@+id/guideline79" />
 
     <TextView
         android:id="@+id/textView_tituloCatalogo"
@@ -43,30 +45,26 @@
         android:textSize="24sp"
         android:textStyle="bold"
         android:typeface="normal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/include3"
+        app:layout_constraintStart_toStartOf="@+id/include3"
         app:layout_constraintTop_toTopOf="@+id/include3" />
 
     <ListView
         android:id="@+id/listView_productosCatalogo"
         android:layout_width="300dp"
         android:layout_height="360dp"
-        android:layout_marginTop="120dp"
-        android:layout_marginBottom="243dp"
         android:background="@color/fog"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.047" />
+        android:dividerHeight="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline74"
+        app:layout_constraintEnd_toEndOf="@+id/include3"
+        app:layout_constraintStart_toStartOf="@+id/include3"
+        app:layout_constraintTop_toTopOf="@+id/guideline68"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/boton_catalogo_addProducto"
         android:layout_width="125dp"
         android:layout_height="54dp"
-        android:layout_marginTop="496dp"
-        android:layout_marginBottom="184dp"
         android:background="@drawable/menu_rectangle"
         android:drawableStart="@drawable/add_icon"
         android:drawableLeft="@drawable/add_icon"
@@ -79,16 +77,14 @@
         android:textColor="@color/white"
         android:textSize="14sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/include3"
+        app:layout_constraintStart_toStartOf="@+id/include3"
+        app:layout_constraintTop_toTopOf="@+id/guideline74" />
 
     <TextView
         android:id="@+id/textView_mensajeCatalogoVacio"
         android:layout_width="290dp"
         android:layout_height="213dp"
-        android:layout_marginTop="144dp"
         android:background="@color/fog"
         android:fontFamily="@font/nunito_sans"
         android:gravity="center"
@@ -97,8 +93,29 @@
         android:textSize="36sp"
         android:textStyle="bold"
         android:visibility="gone"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/include3"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/guideline68" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline68"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="125dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline74"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="500dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline79"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="570dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

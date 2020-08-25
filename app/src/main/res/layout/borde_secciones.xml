@@ -14,30 +14,36 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/borde_inferior" />
 
     <ImageView
         android:id="@+id/bordeIzquierdo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="364dp"
-        android:layout_marginRight="364dp"
+        android:layout_marginEnd="365dp"
+        android:layout_marginRight="365dp"
         android:contentDescription="@string/sinTexto"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/borde_lateral" />
 
     <ImageView
         android:id="@+id/bordeDerecho"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="372dp"
-        android:layout_marginLeft="372dp"
+        android:layout_marginStart="365dp"
+        android:layout_marginLeft="365dp"
         android:contentDescription="@string/sinTexto"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/bordeIzquierdo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/borde_lateral" />
 
     <ImageView
@@ -45,9 +51,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:contentDescription="@string/sinTexto"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/borde_superior" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

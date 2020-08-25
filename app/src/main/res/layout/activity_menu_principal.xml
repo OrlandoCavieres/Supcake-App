@@ -16,8 +16,12 @@
         layout="@layout/borde_menu_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
         android:id="@+id/img_dulces1"
@@ -25,11 +29,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:layout_marginLeft="40dp"
-        android:layout_marginTop="272dp"
         android:contentDescription="@string/sinTexto"
         app:layout_constraintEnd_toStartOf="@+id/img_torta1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/include2"
+        app:layout_constraintTop_toTopOf="@+id/guideline70"
         app:srcCompat="@drawable/cake_image2" />
 
     <ImageView
@@ -38,11 +41,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="272dp"
         android:contentDescription="@string/sinTexto"
         app:layout_constraintEnd_toStartOf="@+id/img_dulces2"
         app:layout_constraintStart_toEndOf="@+id/img_dulces1"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline70"
         app:srcCompat="@drawable/cake_image1" />
 
     <ImageView
@@ -51,11 +53,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="272dp"
         android:contentDescription="@string/sinTexto"
         app:layout_constraintEnd_toStartOf="@+id/img_torta2"
         app:layout_constraintStart_toEndOf="@+id/img_torta1"
-        app:layout_constraintTop_toTopOf="@+id/include2"
+        app:layout_constraintTop_toTopOf="@+id/guideline70"
         app:srcCompat="@drawable/cake_image2" />
 
     <ImageView
@@ -64,11 +65,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="272dp"
         android:contentDescription="@string/sinTexto"
         app:layout_constraintEnd_toStartOf="@+id/img_dulces3"
         app:layout_constraintStart_toEndOf="@+id/img_dulces2"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline70"
         app:srcCompat="@drawable/cake_image1" />
 
     <ImageView
@@ -77,13 +77,12 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="272dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginRight="40dp"
+        android:layout_marginEnd="41dp"
+        android:layout_marginRight="41dp"
         android:contentDescription="@string/sinTexto"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/include2"
         app:layout_constraintStart_toEndOf="@+id/img_torta2"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline70"
         app:srcCompat="@drawable/cake_image2" />
 
     <ImageView
@@ -94,11 +93,11 @@
         android:layout_marginLeft="40dp"
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
-        android:layout_marginBottom="104dp"
         android:contentDescription="@string/sinTexto"
-        app:layout_constraintBottom_toBottomOf="@+id/include2"
+        app:layout_constraintBottom_toTopOf="@+id/guideline67"
         app:layout_constraintEnd_toStartOf="@+id/img_torta3"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/include2"
+        app:layout_constraintTop_toTopOf="@+id/guideline78"
         app:srcCompat="@drawable/cake_image2" />
 
     <ImageView
@@ -107,11 +106,11 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
-        android:layout_marginBottom="104dp"
         android:contentDescription="@string/sinTexto"
-        app:layout_constraintBottom_toBottomOf="@+id/include2"
+        app:layout_constraintBottom_toTopOf="@+id/guideline67"
         app:layout_constraintEnd_toStartOf="@+id/img_dulces5"
         app:layout_constraintStart_toEndOf="@+id/img_dulces4"
+        app:layout_constraintTop_toTopOf="@+id/guideline78"
         app:srcCompat="@drawable/cake_image1" />
 
     <ImageView
@@ -120,11 +119,11 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
-        android:layout_marginBottom="104dp"
         android:contentDescription="@string/sinTexto"
-        app:layout_constraintBottom_toBottomOf="@+id/include2"
+        app:layout_constraintBottom_toTopOf="@+id/guideline67"
         app:layout_constraintEnd_toStartOf="@+id/img_torta4"
         app:layout_constraintStart_toEndOf="@+id/img_torta3"
+        app:layout_constraintTop_toTopOf="@+id/guideline78"
         app:srcCompat="@drawable/cake_image2" />
 
     <ImageView
@@ -133,120 +132,171 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
-        android:layout_marginBottom="104dp"
         android:contentDescription="@string/sinTexto"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/guideline67"
         app:layout_constraintEnd_toStartOf="@+id/img_dulces6"
         app:layout_constraintStart_toEndOf="@+id/img_dulces5"
+        app:layout_constraintTop_toTopOf="@+id/guideline78"
         app:srcCompat="@drawable/cake_image1" />
 
     <ImageView
         android:id="@+id/img_dulces6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="40dp"
-        android:layout_marginRight="40dp"
-        android:layout_marginBottom="104dp"
+        android:layout_marginEnd="41dp"
+        android:layout_marginRight="41dp"
         android:contentDescription="@string/sinTexto"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/guideline67"
+        app:layout_constraintEnd_toEndOf="@+id/include2"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/img_torta4"
+        app:layout_constraintTop_toTopOf="@+id/guideline78"
         app:srcCompat="@drawable/cake_image2" />
 
     <Button
         android:id="@+id/boton_nuevaVenta"
         style="@style/Widget.AppCompat.Button.Borderless.Colored"
-        android:layout_width="206dp"
-        android:layout_height="52dp"
-        android:layout_marginTop="10dp"
+        android:layout_width="240dp"
+        android:layout_height="50dp"
         android:background="@drawable/menu_rectangle"
         android:text="@string/txt_nuevaVenta"
         android:textAppearance="@style/TextAppearance.AppCompat.Button"
         android:textColor="@color/white"
         android:textSize="26sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/img_dulces2" />
+        app:layout_constraintBottom_toTopOf="@+id/guideline75"
+        app:layout_constraintEnd_toEndOf="@+id/include2"
+        app:layout_constraintStart_toStartOf="@+id/include2"
+        app:layout_constraintTop_toTopOf="@+id/guideline73" />
 
     <Button
         android:id="@+id/boton_clientes"
         style="@style/Widget.AppCompat.Button.Borderless.Colored"
-        android:layout_width="206dp"
-        android:layout_height="52dp"
-        android:layout_marginTop="10dp"
+        android:layout_width="240dp"
+        android:layout_height="50dp"
         android:background="@drawable/menu_rectangle"
         android:fontFamily="@font/fira_mono_medium"
         android:text="@string/txt_clientes"
         android:textColor="@color/white"
         android:textSize="26sp"
         android:verticalScrollbarPosition="left"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/boton_nuevaVenta" />
+        app:layout_constraintBottom_toTopOf="@+id/guideline76"
+        app:layout_constraintEnd_toEndOf="@+id/include2"
+        app:layout_constraintStart_toStartOf="@+id/include2"
+        app:layout_constraintTop_toTopOf="@+id/guideline75" />
 
     <Button
         android:id="@+id/boton_catalogo"
         style="@style/Widget.AppCompat.Button.Borderless.Colored"
-        android:layout_width="206dp"
-        android:layout_height="52dp"
-        android:layout_marginTop="10dp"
+        android:layout_width="240dp"
+        android:layout_height="50dp"
         android:background="@drawable/menu_rectangle"
         android:fontFamily="@font/fira_mono_medium"
         android:text="@string/txt_catalogo"
         android:textColor="@color/white"
         android:textSize="26sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/guideline77"
+        app:layout_constraintEnd_toEndOf="@+id/include2"
         app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/boton_clientes" />
+        app:layout_constraintStart_toStartOf="@+id/include2"
+        app:layout_constraintTop_toTopOf="@+id/guideline76" />
 
     <ImageView
         android:id="@+id/icon_properties_menu"
-        android:layout_width="59dp"
-        android:layout_height="59dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginRight="40dp"
-        android:layout_marginBottom="44dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="321dp"
+        android:layout_marginLeft="321dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginBottom="40dp"
         android:contentDescription="@string/sinTexto"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/include2"
+        app:layout_constraintEnd_toEndOf="@+id/include2"
+        app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/properties" />
 
     <TextView
         android:id="@+id/txt_modAdministrador"
-        android:layout_width="wrap_content"
+        android:layout_width="109dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="152dp"
-        android:layout_marginLeft="152dp"
-        android:layout_marginBottom="48dp"
+        android:layout_marginStart="172dp"
+        android:layout_marginLeft="172dp"
+        android:layout_marginBottom="40dp"
         android:contentDescription="@string/sinTexto"
         android:fontFamily="@font/fira_mono_medium"
         android:gravity="end"
         android:text="@string/txt_modoAdministrador"
         android:textColor="@color/zucinni"
-        android:textSize="18sp"
+        android:textSize="14sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/include2"
         app:layout_constraintEnd_toStartOf="@+id/icon_properties_menu"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="@+id/include2" />
 
     <Button
         android:id="@+id/boton_estadisticas"
         style="@style/Widget.AppCompat.Button.Borderless.Colored"
-        android:layout_width="206dp"
-        android:layout_height="52dp"
-        android:layout_marginTop="10dp"
+        android:layout_width="240dp"
+        android:layout_height="50dp"
         android:background="@drawable/menu_rectangle"
         android:fontFamily="@font/fira_mono_medium"
         android:text="@string/txt_estadisticas"
         android:textColor="@color/white"
         android:textSize="26sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/boton_catalogo" />
+        app:layout_constraintBottom_toTopOf="@+id/guideline78"
+        app:layout_constraintEnd_toEndOf="@+id/include2"
+        app:layout_constraintStart_toStartOf="@+id/include2"
+        app:layout_constraintTop_toTopOf="@+id/guideline77"
+        app:layout_constraintVertical_bias="0.461" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline67"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="600dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline70"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="265dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline73"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="315dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline75"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="370dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline76"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="430dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline77"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="490dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline78"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="550dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

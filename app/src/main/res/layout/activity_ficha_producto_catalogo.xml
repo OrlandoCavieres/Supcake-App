@@ -11,8 +11,10 @@
         layout="@layout/borde_secciones_administrador"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView_titulo_catalogo_editarProducto"
@@ -28,8 +30,8 @@
         android:textSize="24sp"
         android:textStyle="bold"
         android:typeface="normal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/include7"
+        app:layout_constraintStart_toStartOf="@+id/include7"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -41,29 +43,29 @@
         android:textColor="@color/blueDiamond"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_titulo_catalogo_editarProducto" />
+        app:layout_constraintEnd_toEndOf="@+id/include7"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="@+id/include7"
+        app:layout_constraintTop_toTopOf="@+id/guideline86" />
 
     <Button
         android:id="@+id/boton_catalogo_volverAlMenu3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="120dp"
+        android:layout_width="280dp"
+        android:layout_height="35dp"
         android:background="@drawable/back_rectangle"
         android:fontFamily="@font/patrick_hand_sc"
         android:text="@string/txt_volverAlMenu"
         android:textColor="@color/white"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/include7"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/include7"
+        app:layout_constraintStart_toStartOf="@+id/include7"
+        app:layout_constraintTop_toTopOf="@+id/guideline85" />
 
     <Button
         android:id="@+id/boton_cancelarEditarProducto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="280dp"
+        android:layout_height="35dp"
         android:layout_marginBottom="5dp"
         android:background="@drawable/back_rectangle"
         android:fontFamily="@font/patrick_hand_sc"
@@ -71,14 +73,14 @@
         android:textColor="@color/white"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/boton_catalogo_volverAlMenu3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/guideline85"
+        app:layout_constraintEnd_toEndOf="@+id/include7"
+        app:layout_constraintStart_toStartOf="@+id/include7" />
 
     <Button
         android:id="@+id/boton_guardarEditarProducto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="280dp"
+        android:layout_height="35dp"
         android:layout_marginBottom="5dp"
         android:background="@drawable/after_rectangle"
         android:fontFamily="@font/patrick_hand_sc"
@@ -87,13 +89,13 @@
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/boton_cancelarEditarProducto"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/include7"
+        app:layout_constraintStart_toStartOf="@+id/include7" />
 
     <Button
         android:id="@+id/boton_eliminarProducto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="280dp"
+        android:layout_height="35dp"
         android:layout_marginBottom="5dp"
         android:background="@drawable/after_rectangle"
         android:fontFamily="@font/patrick_hand_sc"
@@ -102,18 +104,36 @@
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/boton_guardarEditarProducto"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/include7"
+        app:layout_constraintStart_toStartOf="@+id/include7" />
 
     <include
         layout="@layout/ficha_producto_catalogo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/include7"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.263" />
+        app:layout_constraintEnd_toEndOf="@+id/include7"
+        app:layout_constraintStart_toStartOf="@+id/include7"
+        app:layout_constraintTop_toTopOf="@+id/guideline87" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline85"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="570dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline86"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="90dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline87"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="125dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -11,43 +11,45 @@
         layout="@layout/borde_secciones_administrador"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline45"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="100dp" />
+        app:layout_constraintGuide_begin="90dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline46"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="240dp" />
+        app:layout_constraintGuide_begin="210dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline49"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="310dp" />
+        app:layout_constraintGuide_begin="270dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline52"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="380dp" />
+        app:layout_constraintGuide_begin="330dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline47"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="170dp" />
+        app:layout_constraintGuide_begin="150dp" />
 
     <TextView
         android:id="@+id/textView_tituloEstadisticas"
@@ -62,93 +64,77 @@
         android:textColor="@color/white"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/include8"
+        app:layout_constraintStart_toStartOf="@+id/include8"
+        app:layout_constraintTop_toTopOf="@+id/include8" />
 
     <TextView
         android:id="@+id/textView_estadisticas_subtituloProducto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:fontFamily="@font/fira_mono_medium"
         android:text="@string/txt_nombreProducto"
         android:textColor="@color/blueDiamond"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.165"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline72"
         app:layout_constraintTop_toTopOf="@+id/guideline45" />
 
     <TextView
         android:id="@+id/textView_estadisticas_subtituloVendedor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:fontFamily="@font/fira_mono_medium"
         android:text="@string/txt_nombreVendedorTitulo"
         android:textColor="@color/blueDiamond"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.165"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline72"
         app:layout_constraintTop_toTopOf="@+id/guideline47" />
 
     <TextView
         android:id="@+id/textView_estadisticas_subtituloFechaInicial"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:fontFamily="@font/fira_mono_medium"
         android:text="@string/txt_fechaInicial"
         android:textColor="@color/blueDiamond"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.155"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline72"
         app:layout_constraintTop_toTopOf="@+id/guideline46" />
 
     <TextView
         android:id="@+id/textView_estadisticas_subtituloFechaFinal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:fontFamily="@font/fira_mono_medium"
         android:text="@string/txt_fechaFinal"
         android:textColor="@color/blueDiamond"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.142"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline72"
         app:layout_constraintTop_toTopOf="@+id/guideline49" />
 
     <EditText
         android:id="@+id/editText_estadisticas_filtroProducto"
-        android:layout_width="316dp"
-        android:layout_height="26dp"
-        android:layout_marginTop="40dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:autofillHints=""
         android:background="@color/white"
-        android:ems="10"
         android:fontFamily="@font/fira_mono_medium"
         android:gravity="center_vertical"
         android:hint="@string/txt_opcional"
         android:inputType="textPersonName"
         android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline45" />
+        app:layout_constraintEnd_toStartOf="@+id/guideline69"
+        app:layout_constraintStart_toStartOf="@+id/guideline72"
+        app:layout_constraintTop_toBottomOf="@+id/textView_estadisticas_subtituloProducto" />
 
     <EditText
         android:id="@+id/editText_estadisticas_filtroVendedor"
-        android:layout_width="316dp"
+        android:layout_width="0dp"
         android:layout_height="26dp"
-        android:layout_marginTop="40dp"
         android:autofillHints=""
         android:background="@color/white"
         android:ems="10"
@@ -156,96 +142,113 @@
         android:hint="@string/txt_opcional"
         android:inputType="textPersonName"
         android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline47" />
+        app:layout_constraintEnd_toStartOf="@+id/guideline69"
+        app:layout_constraintStart_toStartOf="@+id/guideline72"
+        app:layout_constraintTop_toBottomOf="@+id/textView_estadisticas_subtituloVendedor" />
 
     <TextView
         android:id="@+id/textView_estadisticas_filtroFechaInicial"
-        android:layout_width="278dp"
+        android:layout_width="0dp"
         android:layout_height="26dp"
-        android:layout_marginTop="40dp"
         android:background="@color/white"
         android:fontFamily="@font/fira_mono_medium"
         android:text="@string/txt_hint_formatofecha"
         android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.339"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline46" />
+        app:layout_constraintEnd_toStartOf="@+id/guideline69"
+        app:layout_constraintStart_toStartOf="@+id/guideline72"
+        app:layout_constraintTop_toBottomOf="@+id/textView_estadisticas_subtituloFechaInicial" />
 
     <ImageButton
         android:id="@+id/boton_verCalendarioFechaInicial"
-        android:layout_width="33dp"
-        android:layout_height="33dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginRight="40dp"
+        android:layout_width="26dp"
+        android:layout_height="26dp"
+        android:layout_marginTop="28dp"
         android:background="@color/ghost"
         android:contentDescription="@string/sinTexto"
-        app:layout_constraintBottom_toTopOf="@+id/guideline49"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline69"
         app:layout_constraintTop_toTopOf="@+id/guideline46"
         app:srcCompat="@drawable/calendar_icon" />
 
     <TextView
         android:id="@+id/textView_estadisticas_filtroFechaFinal"
-        android:layout_width="278dp"
+        android:layout_width="0dp"
         android:layout_height="26dp"
-        android:layout_marginTop="40dp"
         android:background="@color/white"
         android:fontFamily="@font/fira_mono_medium"
         android:text="@string/txt_hint_formatofecha"
         android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.339"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline49" />
+        app:layout_constraintEnd_toStartOf="@+id/guideline69"
+        app:layout_constraintStart_toStartOf="@+id/guideline72"
+        app:layout_constraintTop_toBottomOf="@+id/textView_estadisticas_subtituloFechaFinal" />
 
     <ImageButton
         android:id="@+id/boton_verCalendarioFechaFinal"
-        android:layout_width="33dp"
-        android:layout_height="33dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginRight="40dp"
+        android:layout_width="26dp"
+        android:layout_height="26dp"
+        android:layout_marginTop="28dp"
         android:background="@color/ghost"
         android:contentDescription="@string/sinTexto"
-        app:layout_constraintBottom_toTopOf="@+id/guideline52"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline69"
         app:layout_constraintTop_toTopOf="@+id/guideline49"
-        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/calendar_icon" />
 
     <Button
         android:id="@+id/boton_estadisticas_volverAlMenu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="120dp"
+        android:layout_width="280dp"
+        android:layout_height="35dp"
         android:background="@drawable/back_rectangle"
         android:fontFamily="@font/patrick_hand_sc"
         android:text="@string/txt_volverAlMenu"
         android:textColor="@color/white"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/include8"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="@+id/include8"
+        app:layout_constraintTop_toTopOf="@+id/guideline80" />
 
     <Button
         android:id="@+id/boton_estadisticas_obtenerEstadisticas"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
+        android:layout_width="280dp"
+        android:layout_height="35dp"
+        android:layout_marginBottom="5dp"
         android:background="@drawable/after_rectangle"
         android:fontFamily="@font/patrick_hand_sc"
         android:text="@string/txt_obtenerEstadisticas"
         android:textColor="@color/white"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/boton_estadisticas_volverAlMenu"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/guideline80"
+        app:layout_constraintEnd_toEndOf="@+id/include8"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="@+id/include8" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline69"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="320dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline71"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="359dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline72"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="33dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline80"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="570dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
