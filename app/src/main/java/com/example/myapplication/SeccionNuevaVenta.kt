@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 
-class NuevaVenta : AppCompatActivity() {
+class SeccionNuevaVenta : AppCompatActivity() {
 
     private lateinit var volverAlMenu: Button
 
