@@ -23,6 +23,7 @@ class SeccionClientes : AppCompatActivity() {
 
     private lateinit var addCliente: Button
     private lateinit var planillaClientes: ListView
+    private lateinit var mensajePlanillaVacia: TextView
 
     private var tipoIngreso: Int = 0
     private var nombreUsuario: String = ""
@@ -46,6 +47,13 @@ class SeccionClientes : AppCompatActivity() {
             accion.putExtra("tipoUsuarioLogin", this.tipoIngreso)
             accion.putExtra("nombreUsuarioLogin", this.nombreUsuario)
             startActivity(accion)
+        }
+
+        mensajePlanillaVacia = findViewById(R.id.textView_mensajePlanillaVacia)
+
+        if (listaClientes.isEmpty()) {
+            planillaClientes.visibility = ListView.GONE
+            mensajePlanillaVacia.visibility = TextView.VISIBLE
         }
 
         if (tipoIngreso == 0) {

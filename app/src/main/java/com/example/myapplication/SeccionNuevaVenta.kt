@@ -14,7 +14,6 @@ class SeccionNuevaVenta : AppCompatActivity() {
 
     private var carroCompras: MutableList<Venta> = mutableListOf()
     private var listaProductos: MutableList<Producto> = recuperarListaProductosBD()
-    private var montoTotalVentaCompletada: Int = calcularTotalVenta()
 
     private lateinit var volverAlMenu: Button
     private lateinit var continuarVenta: Button
@@ -114,7 +113,7 @@ class SeccionNuevaVenta : AppCompatActivity() {
             and (venta.cantidad > 0)) {
             this.carroCompras.add(nuevaVentaProducto)
             nuevaVentaProducto = Venta()
-            mostrarTotalVentaGlobal.text = "Total: $${this.montoTotalVentaCompletada}"
+            mostrarTotalVentaGlobal.text = "Total: $${this.calcularTotalVenta()}"
             elegirCantidad.setText("")
             elegirDescuento.setText("")
             elegirProducto.setSelection(0)
@@ -137,7 +136,6 @@ class SeccionNuevaVenta : AppCompatActivity() {
             accion.putExtra("nombreUsuarioLogin", this.nombreUsuario)
             accion.putExtra("tipoIngresoLogin", this.tipoIngreso)
             accion.putExtra("carroCompras", this.carroCompras as Serializable)
-            accion.putExtra("montoTotalVenta", this.montoTotalVentaCompletada)
             startActivity(accion)
         }
     }

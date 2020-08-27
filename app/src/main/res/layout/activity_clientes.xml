@@ -75,9 +75,9 @@
         android:layout_height="320dp"
         android:background="@color/fog"
         app:layout_constraintEnd_toEndOf="@+id/include9"
-        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="@+id/include9"
-        app:layout_constraintTop_toTopOf="@+id/guideline89" />
+        app:layout_constraintTop_toTopOf="@+id/guideline89"
+        tools:visibility="visible" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline88"
@@ -99,5 +99,21 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="475dp" />
+
+    <TextView
+        android:id="@+id/textView_mensajePlanillaVacia"
+        android:layout_width="290dp"
+        android:layout_height="213dp"
+        android:background="@color/fog"
+        android:fontFamily="@font/nunito_sans"
+        android:gravity="center"
+        android:text="@string/txt_planillaVacia"
+        android:textColor="@color/blueDiamond"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/include9"
+        app:layout_constraintTop_toTopOf="@+id/guideline89" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

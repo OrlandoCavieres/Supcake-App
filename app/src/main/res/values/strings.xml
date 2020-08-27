@@ -49,6 +49,7 @@
     <string name="txt_nombreCliente">Nombre Cliente</string>
     <string name="txt_direccionCliente">Dirección Cliente</string>
     <string name="txt_confirmarEliminarCliente">¿Está seguro que desea eliminar al cliente de la planilla?</string>
+    <string name="txt_planillaVacia">La planilla de Clientes se encuentra vacía actualmente.</string>
 
     <string name="txt_SI">SI</string>
     <string name="txt_NO">NO</string>
@@ -62,6 +63,10 @@
     <string name="txt_descuento_abrev">Dcto.</string>
     <string name="txt_total">Total</string>
     <string name="txt_totalVenta">Total Venta</string>
+    <string name="txt_totalMontoVenta">Monto Total de Venta</string>
+    <string name="txt_fechaHoraVenta">Fecha y Hora de Venta</string>
+    <string name="txt_solicitarIDCliente">Ingrese ID de CLiente si Corresponde</string>
+    <string name="txt_confirmarVenta">Confirmar Venta</string>
 
     <string name="txt_0">0</string>
     <string name="txt_1">1</string>

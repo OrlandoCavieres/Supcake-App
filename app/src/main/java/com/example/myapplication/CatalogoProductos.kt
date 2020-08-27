@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 class CatalogoProductos : AppCompatActivity() {
 
     private var listaProductos: MutableList<Producto> = mutableListOf(
+        // Solo para pruebas, borrar.
         Producto(0,"cake",1000,1, R.drawable.cake_photo),
         Producto(0,"cake",1000,2, R.drawable.cake_photo),
         Producto(0,"cake",1000,3, R.drawable.cake_photo),
