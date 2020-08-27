@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fog">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline104"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="10dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline105"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="320dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline109"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="310dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline110"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="130dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline111"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="165dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline112"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="220dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline113"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="255dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline114"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="20sp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline115"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="70dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline118"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="250dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline117"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="160dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline119"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="215dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline116"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="125dp" />
+
+    <TextView
+        android:id="@+id/textView_sub_elementoListaVenta_producto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/patrick_hand_sc"
+        android:text="@string/txt_producto"
+        android:textColor="@color/blueDiamond"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/guideline104"
+        app:layout_constraintTop_toTopOf="@+id/guideline114" />
+
+    <TextView
+        android:id="@+id/textView_sub_elementoListaVenta_cantidad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/patrick_hand_sc"
+        android:text="@string/txt_cantidad_abrev"
+        android:textColor="@color/blueDiamond"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/guideline110"
+        app:layout_constraintTop_toTopOf="@+id/guideline114" />
+
+    <TextView
+        android:id="@+id/textView_sub_elementoListaVenta_precio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/patrick_hand_sc"
+        android:text="@string/txt_precioProducto"
+        android:textColor="@color/blueDiamond"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/guideline111"
+        app:layout_constraintTop_toTopOf="@+id/guideline114" />
+
+    <TextView
+        android:id="@+id/textView_sub_elementoListaventa_dcto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/patrick_hand_sc"
+        android:text="@string/txt_descuento_abrev"
+        android:textColor="@color/blueDiamond"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/guideline112"
+        app:layout_constraintTop_toTopOf="@+id/guideline114" />
+
+    <TextView
+        android:id="@+id/textView_sub_elementoListaVenta_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/patrick_hand_sc"
+        android:text="@string/txt_total"
+        android:textColor="@color/blueDiamond"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/guideline113"
+        app:layout_constraintTop_toTopOf="@+id/guideline114" />
+
+    <TextView
+        android:id="@+id/textView_resumenVenta_mostrarNombreProducto"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fontFamily="@font/patrick_hand_sc"
+        android:text="@string/txt_producto"
+        android:textColor="@android:color/black"
+        android:textSize="14sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toTopOf="@+id/guideline115"
+        app:layout_constraintEnd_toStartOf="@+id/guideline116"
+        app:layout_constraintStart_toStartOf="@+id/guideline104"
+        app:layout_constraintTop_toBottomOf="@+id/textView_sub_elementoListaVenta_producto" />
+
+    <TextView
+        android:id="@+id/textView_resumenVenta_mostrarPrecioProducto"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fontFamily="@font/patrick_hand_sc"
+        android:text="@string/txt_precioProducto"
+        android:textColor="@android:color/black"
+        android:textSize="14sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toTopOf="@+id/guideline115"
+        app:layout_constraintEnd_toStartOf="@+id/guideline119"
+        app:layout_constraintStart_toStartOf="@+id/guideline111"
+        app:layout_constraintTop_toBottomOf="@+id/textView_sub_elementoListaVenta_precio" />
+
+    <TextView
+        android:id="@+id/textView_resumenVenta_mostrarDcto"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fontFamily="@font/patrick_hand_sc"
+        android:text="@string/txt_descuento_abrev"
+        android:textColor="@android:color/black"
+        android:textSize="14sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toTopOf="@+id/guideline115"
+        app:layout_constraintEnd_toStartOf="@+id/guideline118"
+        app:layout_constraintStart_toStartOf="@+id/guideline112"
+        app:layout_constraintTop_toBottomOf="@+id/textView_sub_elementoListaventa_dcto" />
+
+    <TextView
+        android:id="@+id/textView_resumenVenta_mostrarCant"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fontFamily="@font/patrick_hand_sc"
+        android:text="@string/txt_cantidad_abrev"
+        android:textColor="@android:color/black"
+        android:textSize="14sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toTopOf="@+id/guideline115"
+        app:layout_constraintEnd_toStartOf="@+id/guideline117"
+        app:layout_constraintStart_toStartOf="@+id/guideline110"
+        app:layout_constraintTop_toBottomOf="@+id/textView_sub_elementoListaVenta_cantidad" />
+
+    <TextView
+        android:id="@+id/textView_resumenVenta_mostrarTotal"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fontFamily="@font/patrick_hand_sc"
+        android:text="@string/txt_total"
+        android:textColor="@android:color/black"
+        android:textSize="14sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toTopOf="@+id/guideline115"
+        app:layout_constraintEnd_toStartOf="@+id/guideline109"
+        app:layout_constraintStart_toStartOf="@+id/guideline113"
+        app:layout_constraintTop_toBottomOf="@+id/textView_sub_elementoListaVenta_total" />
+
+    <ImageButton
+        android:id="@+id/boton_resumenVenta_cancelarVenta"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:background="@color/fog"
+        app:layout_constraintBottom_toTopOf="@+id/guideline114"
+        app:layout_constraintEnd_toStartOf="@+id/guideline109"
+        app:srcCompat="@drawable/delete_icon" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

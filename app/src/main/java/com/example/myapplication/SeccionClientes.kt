@@ -10,18 +10,12 @@ class SeccionClientes : AppCompatActivity() {
 
     private var listaClientes: MutableList<Cliente> = mutableListOf(
         Cliente(0,"Orlando", "Rancagua"),
-        Cliente(1,"Javier", "Rancagua"),
-        Cliente(2,"Diego", "Rancagua"),
-        Cliente(3,"Mauricio", "Rancagua"),
-        Cliente(4,"Gonzalo", "Rancagua"),
-        Cliente(5,"Matias", "Rancagua"),
-        Cliente(9,"Enzo", "Rancagua"),
-        Cliente(8,"Felipe", "Rancagua"),
-        Cliente(7,"Alejandro", "Rancagua"),
-        Cliente(6,"Alondra", "Rancagua"),
-        Cliente(10,"Valeria", "Rancagua"),
-        Cliente(12,"Tamar", "Rancagua"),
-        Cliente(11,"Cesar", "Rancagua")
+        Cliente(2,"Javier", "Rancagua"),
+        Cliente(1,"Diego", "Rancagua"),
+        Cliente(4,"Mauricio", "Rancagua"),
+        Cliente(3,"Felipe", "Rancagua"),
+        Cliente(6,"Alejandro", "Rancagua"),
+        Cliente(5,"Cesar", "Rancagua")
     )
 
     private lateinit var adaptadorPlanilla: AdaptadorCliente

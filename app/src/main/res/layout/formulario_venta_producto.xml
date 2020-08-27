@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/linkWater">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline96"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="10dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline97"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="105dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline98"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="55dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline99"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="10dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline101"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="265dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline102"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="255dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline103"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="155dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline106"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="95dp" />
+
+    <TextView
+        android:id="@+id/textView_ventas_nombreProducto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/fira_mono_medium"
+        android:text="@string/txt_nombreProducto"
+        android:textColor="@color/blueDiamond"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/guideline99"
+        app:layout_constraintTop_toTopOf="@+id/guideline96" />
+
+    <Spinner
+        android:id="@+id/spinner_nombreProductos"
+        android:layout_width="0dp"
+        android:layout_height="20dp"
+        android:background="@color/white"
+        android:spinnerMode="dropdown"
+        app:layout_constraintBottom_toTopOf="@+id/guideline98"
+        app:layout_constraintEnd_toStartOf="@+id/guideline102"
+        app:layout_constraintStart_toStartOf="@+id/guideline99"
+        app:layout_constraintTop_toBottomOf="@+id/textView_ventas_nombreProducto" />
+
+    <TextView
+        android:id="@+id/textView_ventas_cantidadProducto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/fira_mono_medium"
+        android:text="@string/txt_cantidad"
+        android:textColor="@color/blueDiamond"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/guideline99"
+        app:layout_constraintTop_toTopOf="@+id/guideline98" />
+
+    <TextView
+        android:id="@+id/textView_ventas_precioProducto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/fira_mono_medium"
+        android:text="@string/txt_precioProducto"
+        android:textColor="@color/blueDiamond"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/guideline100"
+        app:layout_constraintTop_toTopOf="@+id/guideline98" />
+
+    <TextView
+        android:id="@+id/textView_ventas_totalProducto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/fira_mono_medium"
+        android:text="@string/txt_totalCompraProducto"
+        android:textColor="@color/blueDiamond"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/guideline99"
+        app:layout_constraintTop_toTopOf="@+id/guideline97" />
+
+    <TextView
+        android:id="@+id/textView_ventas_mostrarPrecioProducto"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/ghost"
+        android:fontFamily="@font/fira_mono_medium"
+        android:gravity="end"
+        android:text="@string/sinTexto"
+        android:textColor="@android:color/black"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline102"
+        app:layout_constraintStart_toStartOf="@+id/guideline100"
+        app:layout_constraintTop_toBottomOf="@+id/textView_ventas_precioProducto" />
+
+    <TextView
+        android:id="@+id/textView_ventas_mostrarTotalProducto"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/ghost"
+        android:fontFamily="@font/fira_mono_medium"
+        android:gravity="end"
+        android:text="@string/sinTexto"
+        android:textColor="@android:color/black"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline102"
+        app:layout_constraintStart_toStartOf="@+id/guideline99"
+        app:layout_constraintTop_toBottomOf="@+id/textView_ventas_totalProducto" />
+
+    <TextView
+        android:id="@+id/textView_ventas_descuentoProducto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/fira_mono_medium"
+        android:text="@string/txt_descuento"
+        android:textColor="@color/blueDiamond"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/guideline106"
+        app:layout_constraintTop_toTopOf="@+id/guideline98" />
+
+    <EditText
+        android:id="@+id/editNumber_ventas_cantidad"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:autofillHints=""
+        android:background="@color/white"
+        android:ems="10"
+        android:gravity="end"
+        android:hint="@string/txt_1"
+        android:inputType="number"
+        app:layout_constraintEnd_toStartOf="@+id/guideline107"
+        app:layout_constraintStart_toStartOf="@+id/guideline99"
+        app:layout_constraintTop_toBottomOf="@+id/textView_ventas_cantidadProducto" />
+
+    <EditText
+        android:id="@+id/editNumber_ventas_descuento"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:autofillHints=""
+        android:background="@color/white"
+        android:ems="10"
+        android:gravity="end"
+        android:hint="@string/txt_0"
+        android:inputType="number"
+        app:layout_constraintEnd_toStartOf="@+id/guideline108"
+        app:layout_constraintStart_toStartOf="@+id/guideline106"
+        app:layout_constraintTop_toBottomOf="@+id/textView_ventas_descuentoProducto" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline107"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="85dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline108"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="170dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline100"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="180dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

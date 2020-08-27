@@ -11,22 +11,121 @@
         layout="@layout/borde_secciones"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline94"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="600dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline95"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="90dp" />
+
+    <TextView
+        android:id="@+id/textView_titulo_nuevaVenta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/titulo_seccion"
+        android:fontFamily="@font/patrick_hand_sc"
+        android:gravity="center"
+        android:text="@string/txt_nuevaVenta"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:typeface="normal"
+        app:layout_constraintEnd_toEndOf="@+id/include4"
+        app:layout_constraintStart_toStartOf="@+id/include4"
+        app:layout_constraintTop_toTopOf="@+id/include4" />
+
+    <Button
+        android:id="@+id/boton_nuevaVenta_seguirVenta"
+        android:layout_width="280dp"
+        android:layout_height="35dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/after_rectangle"
+        android:fontFamily="@font/patrick_hand_sc"
+        android:text="@string/txt_seguirVenta"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guideline94"
+        app:layout_constraintEnd_toEndOf="@+id/include4"
+        app:layout_constraintStart_toStartOf="@+id/include4" />
 
     <Button
         android:id="@+id/boton_nuevaVenta_volverAlMenu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="120dp"
+        android:layout_width="280dp"
+        android:layout_height="35dp"
         android:background="@drawable/back_rectangle"
         android:fontFamily="@font/patrick_hand_sc"
         android:text="@string/txt_volverAlMenu"
         android:textColor="@color/white"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/include4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/include4"
+        app:layout_constraintStart_toStartOf="@+id/include4"
+        app:layout_constraintTop_toTopOf="@+id/guideline94" />
+
+    <ImageButton
+        android:id="@+id/boton_nuevaVenta_addCompra"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginBottom="5dp"
+        android:background="@color/ghost"
+        android:contentDescription="@string/sinTexto"
+        app:layout_constraintBottom_toTopOf="@+id/boton_nuevaVenta_seguirVenta"
+        app:layout_constraintEnd_toEndOf="@+id/include4"
+        app:layout_constraintStart_toStartOf="@+id/include4"
+        app:srcCompat="@drawable/add_circle_icon" />
+
+    <ListView
+        android:id="@+id/listView_carroCompras"
+        android:layout_width="320dp"
+        android:layout_height="210dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/fog"
+        android:dividerHeight="5dp"
+        app:layout_constraintEnd_toEndOf="@+id/include4"
+        app:layout_constraintStart_toStartOf="@+id/include4"
+        app:layout_constraintTop_toBottomOf="@+id/include13" />
+
+    <include
+        android:id="@+id/include13"
+        layout="@layout/formulario_venta_producto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@+id/include4"
+        app:layout_constraintStart_toStartOf="@+id/include4"
+        app:layout_constraintTop_toTopOf="@+id/guideline95" />
+
+    <TextView
+        android:id="@+id/textView_resumenVenta_totalVentaGlobal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="8dp"
+        android:alpha="0.5"
+        android:background="@drawable/etiqueta_total"
+        android:fontFamily="@font/patrick_hand_sc"
+        android:gravity="center|center_horizontal|center_vertical"
+        android:text="@string/txt_totalVenta"
+        android:textColor="@android:color/background_dark"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/boton_nuevaVenta_addCompra"
+        app:layout_constraintTop_toBottomOf="@+id/listView_carroCompras" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

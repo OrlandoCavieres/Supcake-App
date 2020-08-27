@@ -52,4 +52,17 @@
 
     <string name="txt_SI">SI</string>
     <string name="txt_NO">NO</string>
+
+    <string name="txt_seguirVenta">Seguir con Venta</string>
+    <string name="txt_cantidad">Cantidad</string>
+    <string name="txt_descuento">Descuento</string>
+    <string name="txt_totalCompraProducto">Total Compra Producto</string>
+    <string name="txt_producto">Producto</string>
+    <string name="txt_cantidad_abrev">Cnt.</string>
+    <string name="txt_descuento_abrev">Dcto.</string>
+    <string name="txt_total">Total</string>
+    <string name="txt_totalVenta">Total Venta</string>
+
+    <string name="txt_0">0</string>
+    <string name="txt_1">1</string>
 </resources>
