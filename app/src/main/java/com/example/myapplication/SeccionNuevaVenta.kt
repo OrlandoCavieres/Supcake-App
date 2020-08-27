@@ -5,11 +5,9 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
-import android.text.Layout
 import android.text.TextWatcher
 import android.view.View
 import android.widget.*
-import org.w3c.dom.Text
 import java.util.*
 
 class SeccionNuevaVenta : AppCompatActivity() {
@@ -136,11 +134,6 @@ class SeccionNuevaVenta : AppCompatActivity() {
             Toast.makeText(this, "El carro de compras está vacío", Toast.LENGTH_SHORT).show()
         }
         if (carroCompras.isNotEmpty()) {
-            /*val accion = Intent(this, ConfirmarVenta::class.java)
-            accion.putExtra("nombreUsuarioLogin", this.nombreUsuario)
-            accion.putExtra("tipoIngresoLogin", this.tipoIngreso)
-            accion.putExtra("totalVenta", this.calcularTotalVenta())
-            startActivity(accion)*/
             confirmarVenta()
         }
     }
