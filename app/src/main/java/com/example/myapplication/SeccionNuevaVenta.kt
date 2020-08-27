@@ -5,15 +5,19 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
+import android.text.Layout
 import android.text.TextWatcher
 import android.view.View
 import android.widget.*
-import java.io.Serializable
+import org.w3c.dom.Text
+import java.util.*
 
 class SeccionNuevaVenta : AppCompatActivity() {
 
     private var carroCompras: MutableList<Venta> = mutableListOf()
     private var listaProductos: MutableList<Producto> = recuperarListaProductosBD()
+    private var fechaActual = Calendar.getInstance().time.toString()
+    private var idCliente: Int = -1
 
     private lateinit var volverAlMenu: Button
     private lateinit var continuarVenta: Button
@@ -132,11 +136,77 @@ class SeccionNuevaVenta : AppCompatActivity() {
             Toast.makeText(this, "El carro de compras está vacío", Toast.LENGTH_SHORT).show()
         }
         if (carroCompras.isNotEmpty()) {
-            val accion = Intent(this, ConfirmarVenta::class.java)
+            /*val accion = Intent(this, ConfirmarVenta::class.java)
             accion.putExtra("nombreUsuarioLogin", this.nombreUsuario)
             accion.putExtra("tipoIngresoLogin", this.tipoIngreso)
-            accion.putExtra("carroCompras", this.carroCompras as Serializable)
+            accion.putExtra("totalVenta", this.calcularTotalVenta())
+            startActivity(accion)*/
+            confirmarVenta()
+        }
+    }
+
+    @SuppressLint("SetTextI18n")
+    private fun confirmarVenta() {
+        setContentView(R.layout.activity_confirmar_venta)
+
+        val montoTotal: TextView = findViewById(R.id.textView_confirmarVenta_mostrarMontoTotal)
+        montoTotal.text = "$ ${this.calcularTotalVenta()}"
+
+        val fechaHora: TextView = findViewById(R.id.textView_confirmarVenta_mostrarFechaHora)
+        fechaHora.text = fechaActual
+
+        val clienteIDingresado: EditText =
+            findViewById(R.id.editText_confirmarVenta_ingresoIDClienteVenta)
+
+        val volverAlMenu2: Button = findViewById(R.id.boton_nuevaVenta_volverAlMenu2)
+        volverAlMenu2.setOnClickListener {
+            val accion = Intent(this, MenuPrincipal::class.java)
+                .setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP or Intent.FLAG_ACTIVITY_CLEAR_TOP)
             startActivity(accion)
+        }
+
+        val confirmarVenta: Button = findViewById(R.id.boton_nuevaVenta_confirmarVenta)
+
+        confirmarVenta.setOnClickListener {
+
+            if (clienteIDingresado.text.isNotBlank()) {
+                this.idCliente = clienteIDingresado.text.toString().toInt()
+
+                /* TODO aplicar criterios para verificacion y actualizacion. Si no cumple con ID
+                *   valido, detener progreso de confirmacion y esperar ingreso de uno valido o nada. */
+                this.verificarIDCliente()
+                this.actualizarHistorialCliente()
+                this.actualizarStockProductos()
+                this.actualizarRegistroVentas()
+
+                confirmarVenta.visibility = Button.GONE
+                val resumen = findViewById<View>(R.id.resumenVenta)
+                resumen.visibility = View.GONE
+                val mensajeExito = findViewById<TextView>(R.id.textView_mensajeVentaExitosa)
+                mensajeExito.visibility = TextView.VISIBLE
+
+                volverAlMenu2.setOnClickListener {
+                    val accion = Intent(this, MenuPrincipal::class.java)
+                        .setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP or Intent.FLAG_ACTIVITY_CLEAR_TOP)
+                    startActivity(accion)
+                }
+            }
+            if (clienteIDingresado.text.isBlank()) {
+                this.actualizarRegistroVentas()
+                this.actualizarStockProductos()
+
+                confirmarVenta.visibility = Button.GONE
+                val resumen = findViewById<View>(R.id.resumenVenta)
+                resumen.visibility = View.GONE
+                val mensajeExito = findViewById<TextView>(R.id.textView_mensajeVentaExitosa)
+                mensajeExito.visibility = TextView.VISIBLE
+
+                volverAlMenu2.setOnClickListener {
+                    val accion = Intent(this, MenuPrincipal::class.java)
+                        .setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP or Intent.FLAG_ACTIVITY_CLEAR_TOP)
+                    startActivity(accion)
+                }
+            }
         }
     }
 
@@ -154,5 +224,24 @@ class SeccionNuevaVenta : AppCompatActivity() {
             Producto(7,"H",1000,8, R.drawable.cake_photo),
             Producto(8,"I",3000,9, R.drawable.cake_photo)
         )
+    }
+
+    private fun verificarIDCliente() {
+        /* TODO metodo que verifica en la base de datos si existe el Id ingresado*/
+    }
+
+    private fun actualizarStockProductos() {
+        /* TODO metodo que emplea el carroCompras para recuperar el producto y las cantidades
+        *   compradas para actualizar el stock del producto en la base de datos mediante su id.*/
+    }
+
+    private fun actualizarHistorialCliente() {
+        /* TODO metodo que emplea totalVenta, el id del cliente y la fecha/hora para actualizar
+        *   y añadir una entrada al historial del cliente.*/
+    }
+
+    private fun actualizarRegistroVentas() {
+        /* TODO metodo que emplea la venta realizada con su fecha para registrarla en la base de
+        *   datos para futuras estadisticas.*/
     }
 }

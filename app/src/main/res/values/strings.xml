@@ -67,6 +67,7 @@
     <string name="txt_fechaHoraVenta">Fecha y Hora de Venta</string>
     <string name="txt_solicitarIDCliente">Ingrese ID de CLiente si Corresponde</string>
     <string name="txt_confirmarVenta">Confirmar Venta</string>
+    <string name="txt_ventaExitosa">Venta realizada e ingresada con éxito al sistema.</string>
 
     <string name="txt_0">0</string>
     <string name="txt_1">1</string>

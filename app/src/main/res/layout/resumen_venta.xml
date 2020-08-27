@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fog">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline120"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="20dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline123"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="70dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline124"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="90dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline125"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="160dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline126"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="300dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline127"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline128"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="280dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline129"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="180dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline130"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="270dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline132"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="250dp" />
+
+    <TextView
+        android:id="@+id/textView_subtituloConfirmarVenta_monto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/fira_mono_medium"
+        android:text="@string/txt_totalMontoVenta"
+        android:textColor="@color/blueDiamond"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/guideline127"
+        app:layout_constraintTop_toTopOf="@+id/guideline120" />
+
+    <TextView
+        android:id="@+id/textView_subtituloConfirmarVenta_fechaHora"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/fira_mono_medium"
+        android:text="@string/txt_fechaHoraVenta"
+        android:textColor="@color/blueDiamond"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/guideline127"
+        app:layout_constraintTop_toTopOf="@+id/guideline124" />
+
+    <TextView
+        android:id="@+id/textView_subtituloConfirmarVenta_IDCliente"
+        android:layout_width="263dp"
+        android:layout_height="39dp"
+        android:fontFamily="@font/fira_mono_medium"
+        android:text="@string/txt_solicitarIDCliente"
+        android:textColor="@color/blueDiamond"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/guideline127"
+        app:layout_constraintTop_toTopOf="@+id/guideline129" />
+
+    <TextView
+        android:id="@+id/textView_confirmarVenta_mostrarMontoTotal"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/ghost"
+        android:fontFamily="@font/fira_mono_medium"
+        android:gravity="center|end"
+        android:text="@string/txt_totalMontoVenta"
+        android:textColor="@android:color/black"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline123"
+        app:layout_constraintEnd_toStartOf="@+id/guideline128"
+        app:layout_constraintStart_toStartOf="@+id/guideline127"
+        app:layout_constraintTop_toBottomOf="@+id/textView_subtituloConfirmarVenta_monto" />
+
+    <TextView
+        android:id="@+id/textView_confirmarVenta_mostrarFechaHora"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/ghost"
+        android:fontFamily="@font/fira_mono_medium"
+        android:gravity="center|end"
+        android:text="@string/txt_fechaHoraVenta"
+        android:textColor="@android:color/black"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline125"
+        app:layout_constraintEnd_toStartOf="@+id/guideline128"
+        app:layout_constraintStart_toStartOf="@+id/guideline127"
+        app:layout_constraintTop_toBottomOf="@+id/textView_subtituloConfirmarVenta_fechaHora" />
+
+    <EditText
+        android:id="@+id/editText_confirmarVenta_ingresoIDClienteVenta"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/white"
+        android:ems="10"
+        android:fontFamily="@font/fira_mono_medium"
+        android:gravity="center|end"
+        android:hint="@string/txt_opcional"
+        android:inputType="number"
+        android:textColor="@android:color/black"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline132"
+        app:layout_constraintEnd_toStartOf="@+id/guideline128"
+        app:layout_constraintStart_toStartOf="@+id/guideline127"
+        app:layout_constraintTop_toBottomOf="@+id/textView_subtituloConfirmarVenta_IDCliente"
+        android:autofillHints="" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,4 +6,100 @@
     android:layout_height="match_parent"
     tools:context=".ConfirmarVenta">
 
+    <include
+        android:id="@+id/include12"
+        layout="@layout/borde_secciones"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline121"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="100dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline122"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="600dp" />
+
+    <TextView
+        android:id="@+id/textView_titulo_nuevaVenta2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/titulo_seccion"
+        android:fontFamily="@font/patrick_hand_sc"
+        android:gravity="center"
+        android:text="@string/txt_nuevaVenta"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:typeface="normal"
+        app:layout_constraintEnd_toEndOf="@+id/include12"
+        app:layout_constraintStart_toStartOf="@+id/include12"
+        app:layout_constraintTop_toTopOf="@+id/include12" />
+
+    <Button
+        android:id="@+id/boton_nuevaVenta_confirmarVenta"
+        android:layout_width="280dp"
+        android:layout_height="35dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/after_rectangle"
+        android:fontFamily="@font/patrick_hand_sc"
+        android:text="@string/txt_confirmarVenta"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guideline122"
+        app:layout_constraintEnd_toEndOf="@+id/include12"
+        app:layout_constraintStart_toStartOf="@+id/include12" />
+
+    <Button
+        android:id="@+id/boton_nuevaVenta_volverAlMenu2"
+        android:layout_width="280dp"
+        android:layout_height="35dp"
+        android:background="@drawable/back_rectangle"
+        android:fontFamily="@font/patrick_hand_sc"
+        android:text="@string/txt_volverAlMenu"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/include12"
+        app:layout_constraintStart_toStartOf="@+id/include12"
+        app:layout_constraintTop_toTopOf="@+id/guideline122" />
+
+    <include
+        android:id="@+id/resumenVenta"
+        layout="@layout/resumen_venta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@+id/include12"
+        app:layout_constraintStart_toStartOf="@+id/include12"
+        app:layout_constraintTop_toTopOf="@+id/guideline121" />
+
+    <TextView
+        android:id="@+id/textView_mensajeVentaExitosa"
+        android:layout_width="290dp"
+        android:layout_height="213dp"
+        android:background="@color/fog"
+        android:fontFamily="@font/nunito_sans"
+        android:gravity="center"
+        android:text="@string/txt_ventaExitosa"
+        android:textColor="@color/blueDiamond"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@+id/include12"
+        app:layout_constraintStart_toStartOf="@+id/include12"
+        app:layout_constraintTop_toTopOf="@+id/guideline121" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
