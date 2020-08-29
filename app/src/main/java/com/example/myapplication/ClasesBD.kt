@@ -1,34 +1,43 @@
 package com.example.myapplication
 
+import android.annotation.SuppressLint
 import android.content.ContentValues
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 
-class ClasesBD : AppCompatActivity() {
+class ClasesBD: AppCompatActivity() {
+
+    /**Clase estatica para agregar, modificar e eliminar
+     * datos de la local BD puesta en el disposito */
 
     companion object {
 
+        /** Compara Nombre y Contraseña ingresada por el
+         * usuario y así poder iniciar sesión en la app*/
+        @SuppressLint("Recycle")
         fun bD_Sesion(Nombre: String, Pass: String, Contexto: Context): Usuario? {
 
             val admin = AdminSQLiteOpenHelper(Contexto, "BD", null, 1)
             val bd = admin.writableDatabase
             val fila = bd.rawQuery("SELECT * FROM usuarios WHERE (nombre_Usuario='$Nombre' AND password='$Pass')LIMIT 1", null)
 
-            var User: Usuario? = null
+            var user: Usuario? = null
 
             if (fila.moveToFirst()) {
 
-                User = Usuario(fila.getInt(0), fila.getString(2), fila.getInt(4))
+                user = Usuario(fila.getInt(0), fila.getString(2), fila.getInt(4))
             }
 
             bd.close()
-            return User
+            return user
         }
 
         ///////////////////////////////////////
         ///////////// Producto ////////////////
         ///////////////////////////////////////
 
+        /** Captura y retorna una lista de todos los
+         * productos disponibles de la BD */
         fun bD_Productos(Contexto: Context): MutableList<Producto> {
 
             val admin = AdminSQLiteOpenHelper(Contexto, "BD", null, 1)
@@ -50,6 +59,8 @@ class ClasesBD : AppCompatActivity() {
             return listaProductos
         }
 
+        /** Con los datos Nombre, Precio y Stock se agrega
+         * el nuevo producto a la BD */
         fun bD_NuevoProducto(Nombre: String, Precio: Int, Stock: Int, Contexto: Context){
 
             val admin = AdminSQLiteOpenHelper(Contexto, "BD", null, 1)
@@ -63,6 +74,8 @@ class ClasesBD : AppCompatActivity() {
             bd.insert("producto", null, nuevoRegistro)
         }
 
+        /** Con el ID del producto se busca e elimina
+         * el producto de la BD */
         fun bD_EliminarProducto(idProducto: Int, Contexto: Context) {
 
             val admin = AdminSQLiteOpenHelper(Contexto, "BD", null, 1)
@@ -72,6 +85,8 @@ class ClasesBD : AppCompatActivity() {
             return
         }
 
+        /** Con el ID del producto se busca y modifica los
+         * datos actuales por los nuevos que definió el Usuario*/
         fun bD_ModificarProducto(producto: Producto, Contexto: Context){
 
             val admin = AdminSQLiteOpenHelper(Contexto, "BD", null, 1)
@@ -88,6 +103,9 @@ class ClasesBD : AppCompatActivity() {
         ///////////////////////////////////////
         ///////////// Clientes ////////////////
         ///////////////////////////////////////
+
+        /** Captura y retorna una lista de todos los
+         * clientes disponibles de la BD */
         fun bD_Cliente(Contexto: Context): MutableList<Cliente> {
 
             val admin = AdminSQLiteOpenHelper(Contexto, "BD", null, 1)
@@ -109,6 +127,22 @@ class ClasesBD : AppCompatActivity() {
             return listaClientes
         }
 
+        /** Con los datos Nombre y Dirección se agrega
+         * el nuevo Cliente a la BD */
+        fun bD_NuevoCliente(Nombre: String, Direccion: String, Contexto: Context){
+
+            val admin = AdminSQLiteOpenHelper(Contexto, "BD", null, 1)
+            val bd = admin.writableDatabase
+
+            val nuevoRegistro = ContentValues()
+            nuevoRegistro.put("nombre_Cliente", Nombre)
+            nuevoRegistro.put("direccion_Cliente", Direccion)
+
+            bd.insert("clientes", null, nuevoRegistro)
+        }
+
+        /** Con el ID del Cliente se busca e elimina
+         * al Cliente de la BD */
         fun bD_EliminarCliente(idCliente: Int, Contexto: Context) {
 
             val admin = AdminSQLiteOpenHelper(Contexto, "BD", null, 1)
@@ -118,6 +152,8 @@ class ClasesBD : AppCompatActivity() {
             return
         }
 
+        /** Se verifica si el actual cliente a consultar
+         * sigue vigente en los registros */
         fun bD_VerificarCliente(idCliente: Int, Contexto: Context): Boolean {
 
             val admin = AdminSQLiteOpenHelper(Contexto, "BD", null, 1)
@@ -132,22 +168,13 @@ class ClasesBD : AppCompatActivity() {
             return Bol
         }
 
-        fun bD_NuevoCliente(Nombre: String, Dirrecion: String, Contexto: Context){
-
-            val admin = AdminSQLiteOpenHelper(Contexto, "BD", null, 1)
-            val bd = admin.writableDatabase
-
-            val nuevoRegistro = ContentValues()
-            nuevoRegistro.put("nombre_Cliente", Nombre)
-            nuevoRegistro.put("direccion_Cliente", Dirrecion)
-
-            bd.insert("clientes", null, nuevoRegistro)
-        }
-
         ///////////////////////////////////////
         /////////// Compras Productos /////////
         ///////////////////////////////////////
 
+        /** Se agrega la compra con todos los productos
+         * agregados por el usuario, los datos del cliente
+         * y a la vez los datos del mismo usuario */
         fun bD_RealizarCompra(Lista: MutableList<Venta>, idCliente: Int, idUsuario: Int, Fecha: String, total: Int, Metodo: Int, Contexto: Context){
 
             val admin = AdminSQLiteOpenHelper(Contexto, "BD", null, 1)
@@ -183,5 +210,6 @@ class ClasesBD : AppCompatActivity() {
             bd.close()
             return
         }
+
     }
 }
