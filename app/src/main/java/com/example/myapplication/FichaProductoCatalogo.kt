@@ -45,14 +45,22 @@ class FichaProductoCatalogo : AppCompatActivity() {
         cancelar.setOnClickListener { finish() }
 
         guardar = findViewById(R.id.boton_guardarEditarProducto)
-        guardar.setOnClickListener { verificarCambios(producto) }
+        guardar.setOnClickListener {
+            verificarCambios(producto)
+            finish()
+        }
 
         eliminarProducto = findViewById(R.id.boton_eliminarProducto)
-        eliminarProducto.setOnClickListener { quitarProductoBD(producto) }
+        eliminarProducto.setOnClickListener {
+            quitarProductoBD(producto)
+            finish()
+        }
 
         examinarImagen = findViewById(R.id.boton_examinarImagen2)
-        examinarImagen.setOnClickListener { cambiarImagen()
-                                            imagenCambiada = true }
+        examinarImagen.setOnClickListener {
+            cambiarImagen()
+            imagenCambiada = true
+        }
     }
 
     private fun cambiarImagen() {
@@ -81,7 +89,6 @@ class FichaProductoCatalogo : AppCompatActivity() {
             producto.modificarCantidad(modStockProducto.toInt())
         }
         if (imagenCambiada) {
-
             producto.imagen = R.drawable.cake_photo
         }
         modificarProductoBD(producto)
@@ -89,12 +96,10 @@ class FichaProductoCatalogo : AppCompatActivity() {
     }
 
     private fun modificarProductoBD(producto: Producto) {
-
         ClasesBD.bD_ModificarProducto(producto,this)
     }
 
     private fun quitarProductoBD(producto: Producto) {
-
         ClasesBD.bD_EliminarProducto(producto.obtenerID(), this)
     }
 }
