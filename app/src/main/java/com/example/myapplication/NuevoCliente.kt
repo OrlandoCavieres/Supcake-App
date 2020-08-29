@@ -53,8 +53,7 @@ class NuevoCliente : AppCompatActivity() {
         }
     }
 
-    private fun crearCliente(Nombre: String, Dirrecion: String) {
-
-        ClasesBD.bD_NuevoCliente(Nombre, Dirrecion, this)
+    private fun crearCliente(Nombre: String, Direccion: String) {
+        ClasesBD.bD_NuevoCliente(Nombre, Direccion, this)
     }
 }

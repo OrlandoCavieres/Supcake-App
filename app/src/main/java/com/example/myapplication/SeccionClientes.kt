@@ -17,12 +17,19 @@ class SeccionClientes : AppCompatActivity() {
     private lateinit var planillaClientes: ListView
     private lateinit var mensajePlanillaVacia: TextView
 
+    private lateinit var cuadroBusqueda: EditText
+    private lateinit var botonBuscar: ImageButton
+
     private var tipoIngreso: Int = 0
     private var nombreUsuario: String = ""
     private var idUsuario = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        this.mainSeccionClientes()
+    }
+
+    private fun mainSeccionClientes() {
         setContentView(R.layout.activity_clientes)
 
         this.obtenerListaClientesBaseDatos()
@@ -45,7 +52,7 @@ class SeccionClientes : AppCompatActivity() {
 
         mensajePlanillaVacia = findViewById(R.id.textView_mensajePlanillaVacia)
 
-        if (listaClientes.isEmpty()) {
+        if (this.listaClientes.isEmpty()) {
             planillaClientes.visibility = ListView.GONE
             mensajePlanillaVacia.visibility = TextView.VISIBLE
         }
@@ -55,7 +62,7 @@ class SeccionClientes : AppCompatActivity() {
             iconAdmin.visibility = ImageView.GONE
             val textAdmin = findViewById<TextView> (R.id.txt_modAdministrador)
             textAdmin.visibility = TextView.GONE
-            boton_clientes_addCliente.visibility = Button.GONE
+            addCliente.visibility = Button.GONE
         }
 
         planillaClientes = findViewById(R.id.listView_planillaClientes)
@@ -65,12 +72,15 @@ class SeccionClientes : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        this.obtenerListaClientesBaseDatos()
         this.adaptadorPlanilla.notifyDataSetChanged()
+        this.mainSeccionClientes()
+    }
+
+    private fun buscarEnCatalogo() {
+
     }
 
     private fun obtenerListaClientesBaseDatos() {
-
-        listaClientes = ClasesBD.bD_Cliente(this);
+        listaClientes = ClasesBD.bD_Cliente(this)
     }
 }
