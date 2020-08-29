@@ -119,4 +119,33 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="570dp" />
 
+    <EditText
+        android:id="@+id/editText_catalogo_textoBuscar"
+        android:layout_width="276dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="5dp"
+        android:autofillHints=""
+        android:background="@color/white"
+        android:ems="10"
+        android:fontFamily="@font/nunito_sans"
+        android:hint="@string/txt_buscarCatalogo"
+        android:inputType="textPersonName"
+        android:textAllCaps="false"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/include3"
+        app:layout_constraintHorizontal_bias="0.401"
+        app:layout_constraintStart_toStartOf="@+id/include3"
+        app:layout_constraintTop_toBottomOf="@+id/textView_tituloCatalogo" />
+
+    <ImageButton
+        android:id="@+id/boton_catalogo_buscar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/ghost"
+        android:contentDescription="@string/sinTexto"
+        app:layout_constraintStart_toEndOf="@+id/editText_catalogo_textoBuscar"
+        app:layout_constraintTop_toBottomOf="@+id/textView_tituloCatalogo"
+        app:srcCompat="@android:drawable/ic_menu_search" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
