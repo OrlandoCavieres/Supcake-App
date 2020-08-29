@@ -93,13 +93,6 @@ class SeccionClientes : AppCompatActivity() {
     }
 
     /**
-     * Método que permite buscar en el catalogo un producto a partir de su nombre o fracción del mismo.
-     */
-    private fun buscarEnCatalogo() {
-
-    }
-
-    /**
      * Método que permite obtener la lista de clientes almacenada en la base de datos, para su uso en
      * esta sección.
      */

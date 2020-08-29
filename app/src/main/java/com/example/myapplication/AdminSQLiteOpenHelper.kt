@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteDatabase.CursorFactory
 
 /**
- * Clase encargada de establecer un link con la base de datos.
+ * Clase encargada de establecer el link con la base de datos de SQLite.
  */
 class AdminSQLiteOpenHelper(context: Context, name: String, factory: CursorFactory?, version: Int) : SQLiteOpenHelper(context, name, factory, version) {
 
