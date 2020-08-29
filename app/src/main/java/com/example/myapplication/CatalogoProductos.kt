@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import java.util.*
 
 class CatalogoProductos : AppCompatActivity() {
 
@@ -50,9 +51,23 @@ class CatalogoProductos : AppCompatActivity() {
         }
 
         cuadroBusqueda = findViewById(R.id.editText_catalogo_textoBuscar)
+        cuadroBusqueda.setOnClickListener {
+            if (cuadroBusqueda.text.toString().isNotBlank()) {
+                mainCatalogo()
+            }
+        }
 
         botonBuscar = findViewById(R.id.boton_catalogo_buscar)
-        botonBuscar.setOnClickListener { }
+        botonBuscar.setOnClickListener {
+            val texto = cuadroBusqueda.text.toString()
+            if (texto.isNotBlank()) {
+                val listaFiltrada = this.listaProductos.filter {
+                    it.nombre.toLowerCase(Locale.ROOT).contains(texto.toLowerCase(Locale.ROOT))
+                }
+                adaptadorCatalogo.clear()
+                adaptadorCatalogo.addAll(listaFiltrada)
+            }
+        }
 
         catalogoVacio = findViewById(R.id.textView_mensajeCatalogoVacio)
 
