@@ -34,6 +34,7 @@ class Login : AppCompatActivity() {
     private fun verificarDatosLogin() {
         val usuario = usuarioIngresado.text.toString()
         val password = passwordIngresado.text.toString()
+
         if (usuario.isBlank()) {
             Toast.makeText(this, "Debe ingresar el nombre de usuario", Toast.LENGTH_SHORT).show()
         }
@@ -48,18 +49,16 @@ class Login : AppCompatActivity() {
 
     private fun verificarUsuarioBaseDatos(usuario: String, password: String) {
 
-        val Try: Usuario? = ClasesBD.bD_Sesion(usuario, password, this)
+        val intento: Usuario? = ClasesBD.bD_Sesion(usuario, password, this)
 
-        if(Try != null){
-
-            this.tipoUsuario = Try.obtenertipoUser()
-            this.nombreUsuario = Try.obtenerNombre()
-            this.idUsuario = Try.obtenerID()
+        if(intento != null){
+            this.tipoUsuario = intento.obtenertipoUser()
+            this.nombreUsuario = intento.obtenerNombre()
+            this.idUsuario = intento.obtenerID()
             inicioSesionCorrecto()
 
         }else{
-
-            ///
+            Toast.makeText(this, "Usuario o contraseña invalida", Toast.LENGTH_SHORT).show()
         }
     }
 
