@@ -177,8 +177,7 @@ class SeccionNuevaVenta : AppCompatActivity() {
             if (clienteIDingresado.text.isNotBlank()) {
                 this.idCliente = clienteIDingresado.text.toString().toInt()
 
-                if(this.verificarExistenciaCliente()){
-
+                if (this.verificarExistenciaCliente()) {
                     this.actualizarHistorialCliente()
                     this.actualizarRegistroVentas()
 
@@ -214,13 +213,11 @@ class SeccionNuevaVenta : AppCompatActivity() {
     }
 
     private fun recuperarListaProductosBD(){
-
         this.listaProductos = ClasesBD.bD_Productos(this)
     }
 
     private fun verificarExistenciaCliente(): Boolean {
-
-            return ClasesBD.bD_VerificarCliente(this.idCliente, this)
+        return ClasesBD.bD_VerificarCliente(this.idCliente, this)
     }
 
     private fun actualizarHistorialCliente() {
@@ -229,7 +226,7 @@ class SeccionNuevaVenta : AppCompatActivity() {
     }
 
     private fun actualizarRegistroVentas() {
-
-        ClasesBD.bD_RealizarCompra(this.carroCompras, this.idCliente, this.idUsuario, this.fechaActual, this.calcularTotalVenta(), 0, this)
+        ClasesBD.bD_RealizarCompra(this.carroCompras, this.idCliente, this.idUsuario,
+            this.fechaActual, this.calcularTotalVenta(), 0, this)
     }
 }
