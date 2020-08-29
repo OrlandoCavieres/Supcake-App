@@ -59,6 +59,7 @@ class MenuPrincipal : AppCompatActivity() {
         }
         nuevaPagina!!.putExtra("tipoUsuarioLogin", this.tipoIngreso)
         nuevaPagina.putExtra("nombreUsuarioLogin", this.nombreUsuario)
+        nuevaPagina.putExtra("idLogin", this.idUsuario)
         startActivity(nuevaPagina)
     }
 }
