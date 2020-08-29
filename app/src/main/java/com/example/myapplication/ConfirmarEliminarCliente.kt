@@ -26,8 +26,6 @@ class ConfirmarEliminarCliente : AppCompatActivity() {
     }
 
     private fun eliminarClienteBD(cliente: Cliente) {
-        /* TODO metodo para eliminar un cliente de la base de datos.*/
-        val id = cliente.obtenerID()
-        println(id)
+        ClasesBD.bD_EliminarCliente(cliente.obtenerID(), this)
     }
 }

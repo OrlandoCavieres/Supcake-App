@@ -8,15 +8,7 @@ import kotlinx.android.synthetic.main.activity_clientes.*
 
 class SeccionClientes : AppCompatActivity() {
 
-    private var listaClientes: MutableList<Cliente> = mutableListOf(
-        Cliente(0,"Orlando", "Rancagua"),
-        Cliente(2,"Javier", "Rancagua"),
-        Cliente(1,"Diego", "Rancagua"),
-        Cliente(4,"Mauricio", "Rancagua"),
-        Cliente(3,"Felipe", "Rancagua"),
-        Cliente(6,"Alejandro", "Rancagua"),
-        Cliente(5,"Cesar", "Rancagua")
-    )
+    private var listaClientes: MutableList<Cliente> = mutableListOf()
 
     private lateinit var adaptadorPlanilla: AdaptadorCliente
     private lateinit var volverAlMenu: Button
@@ -27,6 +19,7 @@ class SeccionClientes : AppCompatActivity() {
 
     private var tipoIngreso: Int = 0
     private var nombreUsuario: String = ""
+    private var idUsuario = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,6 +30,7 @@ class SeccionClientes : AppCompatActivity() {
 
         nombreUsuario = intent.getStringExtra("nombreUsuarioLogin").toString()
         tipoIngreso = intent.getIntExtra("tipoUsuarioLogin", 0)
+        idUsuario = intent.getIntExtra("idLogin", 0)
 
         volverAlMenu = findViewById(R.id.boton_clientes_volverAlMenu)
         volverAlMenu.setOnClickListener { finish() }
@@ -76,7 +70,7 @@ class SeccionClientes : AppCompatActivity() {
     }
 
     private fun obtenerListaClientesBaseDatos() {
-        /* TODO metodo que obtiene la lista guardada en la base de datos y actualiza la lista de
-        *   clientes en esta seccion.*/
+
+        listaClientes = ClasesBD.bD_Cliente(this);
     }
 }

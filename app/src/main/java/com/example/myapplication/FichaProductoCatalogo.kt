@@ -81,8 +81,7 @@ class FichaProductoCatalogo : AppCompatActivity() {
             producto.modificarCantidad(modStockProducto.toInt())
         }
         if (imagenCambiada) {
-            /* TODO Indicar el nombre o id del drawable en la base de datos
-            *   en la posicion de cake_photo */
+
             producto.imagen = R.drawable.cake_photo
         }
         modificarProductoBD(producto)
@@ -90,16 +89,12 @@ class FichaProductoCatalogo : AppCompatActivity() {
     }
 
     private fun modificarProductoBD(producto: Producto) {
-        /* TODO metodo para modificar la base de datos en base a los cambios realizados
-        *   en la instancia producto con su respectivo ID*/
-        val id = producto.obtenerID()
-        println(id)
+
+        ClasesBD.bD_ModificarProducto(producto,this)
     }
 
     private fun quitarProductoBD(producto: Producto) {
-        /* TODO metodo para eliminar un producto de la base de datos */
-        val id = producto.obtenerID()
-        println(id)
-        finish()
+
+        ClasesBD.bD_EliminarProducto(producto.obtenerID(), this)
     }
 }

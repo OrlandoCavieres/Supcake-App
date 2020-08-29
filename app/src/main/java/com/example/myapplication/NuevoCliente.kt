@@ -40,6 +40,7 @@ class NuevoCliente : AppCompatActivity() {
     private fun verificarCamposFormulario() {
         val nombre = nombreNuevoCliente.text.toString()
         val direccion = direccionNuevoCliente.text.toString()
+
         if (nombre.isBlank()) {
             Toast.makeText(this, "Debe ingresar un nombre de cliente", Toast.LENGTH_SHORT).show()
         }
@@ -47,13 +48,13 @@ class NuevoCliente : AppCompatActivity() {
             Toast.makeText(this, "Debe ingresar una direccion", Toast.LENGTH_SHORT).show()
         }
         if (nombre.isNotBlank() and nombre.isNotBlank()) {
-            crearCliente()
+            crearCliente(nombre, direccion)
             finish()
         }
     }
 
-    private fun crearCliente() {
-        /* TODO Se necesita que la base de datos otorgue el id y guarde el cliente para ser
-            usado en la seccion clientes*/
+    private fun crearCliente(Nombre: String, Dirrecion: String) {
+
+        ClasesBD.bD_NuevoCliente(Nombre, Dirrecion, this)
     }
 }

@@ -5,15 +5,18 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
+import android.text.Layout
 import android.text.TextWatcher
 import android.view.View
 import android.widget.*
+import org.w3c.dom.Text
 import java.util.*
 
 class SeccionNuevaVenta : AppCompatActivity() {
 
     private var carroCompras: MutableList<Venta> = mutableListOf()
-    private var listaProductos: MutableList<Producto> = recuperarListaProductosBD()
+    private var listaProductos: MutableList<Producto> = mutableListOf()
+
     private var fechaActual = Calendar.getInstance().time.toString()
     private var idCliente: Int = -1
 
@@ -32,6 +35,7 @@ class SeccionNuevaVenta : AppCompatActivity() {
 
     private var tipoIngreso: Int = 0
     private var nombreUsuario: String = ""
+    private var idUsuario = 0
 
     var nuevaVentaProducto = Venta()
 
@@ -39,8 +43,11 @@ class SeccionNuevaVenta : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_nueva_venta)
 
+        recuperarListaProductosBD()
+
         nombreUsuario = intent.getStringExtra("nombreUsuarioLogin").toString()
         tipoIngreso = intent.getIntExtra("tipoUsuarioLogin", 0)
+        idUsuario = intent.getIntExtra("idLogin", 0)
 
         volverAlMenu = findViewById(R.id.boton_nuevaVenta_volverAlMenu)
         volverAlMenu.setOnClickListener { finish() }
@@ -134,6 +141,11 @@ class SeccionNuevaVenta : AppCompatActivity() {
             Toast.makeText(this, "El carro de compras está vacío", Toast.LENGTH_SHORT).show()
         }
         if (carroCompras.isNotEmpty()) {
+            /*val accion = Intent(this, ConfirmarVenta::class.java)
+            accion.putExtra("nombreUsuarioLogin", this.nombreUsuario)
+            accion.putExtra("tipoIngresoLogin", this.tipoIngreso)
+            accion.putExtra("totalVenta", this.calcularTotalVenta())
+            startActivity(accion)*/
             confirmarVenta()
         }
     }
@@ -165,28 +177,26 @@ class SeccionNuevaVenta : AppCompatActivity() {
             if (clienteIDingresado.text.isNotBlank()) {
                 this.idCliente = clienteIDingresado.text.toString().toInt()
 
-                /* TODO aplicar criterios para verificacion y actualizacion. Si no cumple con ID
-                *   valido, detener progreso de confirmacion y esperar ingreso de uno valido o nada. */
-                this.verificarIDCliente()
-                this.actualizarHistorialCliente()
-                this.actualizarStockProductos()
-                this.actualizarRegistroVentas()
+                if(this.verificarExistenciaCliente()){
 
-                confirmarVenta.visibility = Button.GONE
-                val resumen = findViewById<View>(R.id.resumenVenta)
-                resumen.visibility = View.GONE
-                val mensajeExito = findViewById<TextView>(R.id.textView_mensajeVentaExitosa)
-                mensajeExito.visibility = TextView.VISIBLE
+                    this.actualizarHistorialCliente()
+                    this.actualizarRegistroVentas()
 
-                volverAlMenu2.setOnClickListener {
-                    val accion = Intent(this, MenuPrincipal::class.java)
-                        .setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP or Intent.FLAG_ACTIVITY_CLEAR_TOP)
-                    startActivity(accion)
+                    confirmarVenta.visibility = Button.GONE
+                    val resumen = findViewById<View>(R.id.resumenVenta)
+                    resumen.visibility = View.GONE
+                    val mensajeExito = findViewById<TextView>(R.id.textView_mensajeVentaExitosa)
+                    mensajeExito.visibility = TextView.VISIBLE
+
+                    volverAlMenu2.setOnClickListener {
+                        val accion = Intent(this, MenuPrincipal::class.java)
+                            .setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP or Intent.FLAG_ACTIVITY_CLEAR_TOP)
+                        startActivity(accion)
+                    }
                 }
             }
             if (clienteIDingresado.text.isBlank()) {
                 this.actualizarRegistroVentas()
-                this.actualizarStockProductos()
 
                 confirmarVenta.visibility = Button.GONE
                 val resumen = findViewById<View>(R.id.resumenVenta)
@@ -203,29 +213,14 @@ class SeccionNuevaVenta : AppCompatActivity() {
         }
     }
 
-    private fun recuperarListaProductosBD(): MutableList<Producto> {
-        /* TODO metodo que recupera los datos de productos desde la base de datos y lo otorga a la lista
-        *   que los guardara para el uso de spinner y para obtener sus datos para venta como stock y precio. */
-        return mutableListOf(
-            Producto(0,"A",1000,1, R.drawable.cake_photo),
-            Producto(1,"B",2000,2, R.drawable.cake_photo),
-            Producto(2,"C",1000,3, R.drawable.cake_photo),
-            Producto(3,"D",2000,4, R.drawable.cake_photo),
-            Producto(4,"E",3000,5, R.drawable.cake_photo),
-            Producto(5,"F",1000,6, R.drawable.cake_photo),
-            Producto(6,"G",2000,7, R.drawable.cake_photo),
-            Producto(7,"H",1000,8, R.drawable.cake_photo),
-            Producto(8,"I",3000,9, R.drawable.cake_photo)
-        )
+    private fun recuperarListaProductosBD(){
+
+        this.listaProductos = ClasesBD.bD_Productos(this)
     }
 
-    private fun verificarIDCliente() {
-        /* TODO metodo que verifica en la base de datos si existe el Id ingresado*/
-    }
+    private fun verificarExistenciaCliente(): Boolean {
 
-    private fun actualizarStockProductos() {
-        /* TODO metodo que emplea el carroCompras para recuperar el producto y las cantidades
-        *   compradas para actualizar el stock del producto en la base de datos mediante su id.*/
+            return ClasesBD.bD_VerificarCliente(this.idCliente, this)
     }
 
     private fun actualizarHistorialCliente() {
@@ -234,7 +229,7 @@ class SeccionNuevaVenta : AppCompatActivity() {
     }
 
     private fun actualizarRegistroVentas() {
-        /* TODO metodo que emplea la venta realizada con su fecha para registrarla en la base de
-        *   datos para futuras estadisticas.*/
+
+        ClasesBD.bD_RealizarCompra(this.carroCompras, this.idCliente, this.idUsuario, this.fechaActual, this.calcularTotalVenta(), 0, this)
     }
 }

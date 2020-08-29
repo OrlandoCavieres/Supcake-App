@@ -16,6 +16,7 @@ class MenuPrincipal : AppCompatActivity() {
 
     private var tipoIngreso: Int = 0
     private var nombreUsuario: String = ""
+    private var idUsuario = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,6 +36,7 @@ class MenuPrincipal : AppCompatActivity() {
 
         nombreUsuario = intent.getStringExtra("nombreUsuarioLogin").toString()
         tipoIngreso = intent.getIntExtra("tipoUsuarioLogin", 0)
+        idUsuario = intent.getIntExtra("idLogin", 0)
 
         when (tipoIngreso) {
             0 -> {

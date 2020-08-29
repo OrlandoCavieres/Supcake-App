@@ -17,6 +17,7 @@ class Login : AppCompatActivity() {
 
     private var tipoUsuario = 0
     private var nombreUsuario = ""
+    private var idUsuario = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,17 +47,27 @@ class Login : AppCompatActivity() {
     }
 
     private fun verificarUsuarioBaseDatos(usuario: String, password: String) {
-        /* TODO Implementar verificación con base de datos del usuario.
-        *   Cambiar tipoUsuario segun corresponda. 1 = Admin, 0 = Vendedor*/
-        this.tipoUsuario = 1
-        this.nombreUsuario = usuario
-        inicioSesionCorrecto()
+
+        val Try: Usuario? = ClasesBD.bD_Sesion(usuario, password, this)
+
+        if(Try != null){
+
+            this.tipoUsuario = Try.obtenertipoUser()
+            this.nombreUsuario = Try.obtenerNombre()
+            this.idUsuario = Try.obtenerID()
+            inicioSesionCorrecto()
+
+        }else{
+
+            ///
+        }
     }
 
     private fun inicioSesionCorrecto() {
         val inicio = Intent(this, MenuPrincipal::class.java)
         inicio.putExtra("tipoUsuarioLogin", this.tipoUsuario)
         inicio.putExtra("nombreUsuarioLogin", this.nombreUsuario)
+        inicio.putExtra("idLogin", this.idUsuario)
         Toast.makeText(this, "¡Bienvenido, ${this.nombreUsuario}!", Toast.LENGTH_SHORT).show()
         startActivity(inicio)
     }

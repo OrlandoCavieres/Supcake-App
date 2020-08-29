@@ -10,18 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 
 class CatalogoProductos : AppCompatActivity() {
 
-    private var listaProductos: MutableList<Producto> = mutableListOf(
-        // Solo para pruebas, borrar.
-        Producto(0,"cake",1000,1, R.drawable.cake_photo),
-        Producto(0,"cake",1000,2, R.drawable.cake_photo),
-        Producto(0,"cake",1000,3, R.drawable.cake_photo),
-        Producto(0,"cake",1000,4, R.drawable.cake_photo),
-        Producto(0,"cake",1000,5, R.drawable.cake_photo),
-        Producto(0,"pancake",1000,6, R.drawable.cake_photo),
-        Producto(0,"cake",1000,7, R.drawable.cake_photo),
-        Producto(0,"cake",1000,8, R.drawable.cake_photo),
-        Producto(0,"atacake",1000,9, R.drawable.cake_photo)
-    )
+    private var listaProductos: MutableList<Producto> = mutableListOf()
 
     private lateinit var listViewProductos: ListView
     private lateinit var volverAlMenu: Button
@@ -32,6 +21,7 @@ class CatalogoProductos : AppCompatActivity() {
 
     private var tipoIngreso: Int = 0
     private var nombreUsuario: String = ""
+    private var idUsuario = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,6 +32,7 @@ class CatalogoProductos : AppCompatActivity() {
 
         nombreUsuario = intent.getStringExtra("nombreUsuarioLogin").toString()
         tipoIngreso = intent.getIntExtra("tipoUsuarioLogin", 0)
+        idUsuario = intent.getIntExtra("idLogin", 0)
 
         volverAlMenu = findViewById(R.id.boton_catalogo_volverAlMenu)
         volverAlMenu.setOnClickListener { finish() }
@@ -89,7 +80,8 @@ class CatalogoProductos : AppCompatActivity() {
     }
 
     private fun obtenerListaProductoBaseDatos() {
-        /* TODO Implementar método que pregunte a la base de datos la lista de productos
-            y actualize la lista a presentar en seccion catalogo*/
+
+        listaProductos = ClasesBD.bD_Productos(this);
+
     }
 }

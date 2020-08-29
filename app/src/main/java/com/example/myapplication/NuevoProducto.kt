@@ -71,13 +71,13 @@ class NuevoProducto : AppCompatActivity() {
             imagenIngresada = true
         }
         if (nombreProducto.isNotBlank() && precioProducto.isNotBlank() && stockProducto.isNotBlank() && imagenIngresada) {
-            crearProducto()
+            crearProducto(nombreProducto, precioProducto.toInt(), stockProducto.toInt())
             finish()
         }
     }
 
-    private fun crearProducto() {
-        /* TODO Se necesita que la base de datos otorgue el id y guarde el producto para ser
-            usado en el catalogo*/
+    private fun crearProducto(nombreProducto: String, precioProducto: Int, stockProducto: Int) {
+
+        ClasesBD.bD_NuevoProducto(nombreProducto, precioProducto, stockProducto, this)
     }
 }
