@@ -226,6 +226,9 @@ class SeccionNuevaVenta : AppCompatActivity() {
                         startActivity(accion)
                     }
                 }
+                else{
+                    Toast.makeText(this,"ID Cliente no valido",Toast.LENGTH_SHORT).show()
+                }
             }
             if (clienteIDingresado.text.isBlank()) {
                 this.actualizarRegistroVentas()
