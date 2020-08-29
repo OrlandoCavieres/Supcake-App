@@ -76,9 +76,9 @@ class CatalogoProductos : AppCompatActivity() {
             }
         }
 
-       /* Configuración botón buscar en catalogo. Permite filtrar una lista y entregarsela al adaptador,
-          despues de vaciar a este último, filtrando así el list View asociado y mostrando los
-          productos filtrados. */
+        /* Configuración botón buscar en catalogo. Permite filtrar una lista y entregarsela al adaptador,
+           despues de vaciar a este último, filtrando así el list View asociado y mostrando los
+           productos filtrados. */
         botonBuscar = findViewById(R.id.boton_catalogo_buscar)
         botonBuscar.setOnClickListener {
             val texto = cuadroBusqueda.text.toString()
